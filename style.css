@@ -40,8 +40,23 @@
 #bmi-form form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 #bmi-form h3 {
-    grid-area: 1 / 1 / 1 / -1;
+    grid-area: 1 / 1 / 2 / -1;
+}
+#age-input {
+    grid-area: 2 / 1 / 3 / 3;
+}
+#gender-menu {
+    grid-area: 3 / 1 / 4 / -1;
+}
+#weight-input {
+    grid-area: 4 / 1 / 5 / 2;
+}
+#height-input {
+    grid-area: 4 / 2 / 5 / 3;
+}
+#submit-menu {
+    grid-area: 5 / 1 / 6 / -1;
 }
