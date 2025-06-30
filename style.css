@@ -1,0 +1,29 @@
+#container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    color: #000;
+    display: grid;
+    grid-template-rows: 3fr 1fr 1fr;
+}
+#top-section {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+#top-main {
+    border-bottom-right-radius: 4rem;
+    background: linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+#top-main h1 {
+        font-size: 4rem;
+
+}
+#top-main h1, p {
+    width: 500px;
+}
