@@ -9,6 +9,7 @@
 #top-section {
     display: grid;
     grid-template-columns: 3fr 1fr;
+    position: relative;
 }
 #top-main {
     border-bottom-right-radius: 4rem;
@@ -16,14 +17,31 @@
     padding: 4rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
     gap: 1rem;
+    text-align: justify;
 }
 #top-main h1 {
-        font-size: 4rem;
-
+    font-size: 4rem;
 }
 #top-main h1, p {
     width: 500px;
+}
+#bmi-form {
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    width: 400px;
+    padding: 2rem;
+    height: 400px;
+    background-color: white;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.473);
+}
+#bmi-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+}
+#bmi-form h3 {
+    grid-area: 1 / 1 / 1 / -1;
 }
