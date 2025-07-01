@@ -1,13 +1,17 @@
 :root {
     --cold-blue: #f0f8ff;
 }
+html, body {
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
 
 #container {
     width: 100vw;
     background-color: #fff;
     color: #000;
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    overflow-x: hidden;
 }
 #top-section {
     display: grid;
@@ -30,16 +34,11 @@
 #top-main h1 {
     font-size: 4rem;
 }
-#top-main h1, p {
-    width: 500px;
-}
 #bmi-form {
     position: absolute;
     top: 4rem;
     right: 12%;
-    width: 400px;
     padding: 2rem;
-    height: 400px;
     background-color: white;
     box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.473);
     display: flex;
@@ -157,11 +156,111 @@ button:hover {
     box-shadow: -4px -4px 20px #a3d4ff80;
 }
 #mid-right {
-        display: flex;
+    display: flex;
     flex-direction: column;
     gap: 16px;
     text-align: justify;
     margin-top: 8rem;
     margin-right: 4%;
-        grid-area: 1 / 5 / 2 / 6;
+    grid-area: 1 / 5 / 2 / 6;
 }
+#bot-section {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+#bot-section-container {
+    grid-column: 2;
+    text-align: justify;
+    width: 100%;
+    display: grid;
+    gap: 64px;
+}
+#origin-para {
+    width: 100%;
+    font-size: 2rem;
+}
+.bmi-table-simple-container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.bmi-table-simple {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.bmi-table-simple th,
+.bmi-table-simple td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.bmi-table-simple th {
+    background-color: #e2e6ea;
+    font-weight: bold;
+    color: #555;
+}
+ td {
+    background-color: var(--cold-blue);
+}
+
+.bmi-table-simple .category-starvation td:first-child { background-color: #ced4da; }
+.bmi-table-simple .category-underweight-severe td:first-child { background-color: #d1ecf1; }
+.bmi-table-simple .category-underweight td:first-child { background-color: #d1ecf1; }
+.bmi-table-simple .category-normal td:first-child { background-color: #d4edda; }
+.bmi-table-simple .category-overweight td:first-child { background-color: #fff3cd; }
+.bmi-table-simple .category-obese-1 td:first-child { background-color: #f8d7da; }
+.bmi-table-simple .category-obese-2 td:first-child { background-color: #dc3545; color: white;}
+.bmi-table-simple .category-obese-3 td:first-child { background-color: #a71d2a; color: white;}
+
+
+.age-bmi-recommendations-simple h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.age-bmi-recommendations-simple ul {
+    list-style: disc; /* Default bullets */
+    padding-left: 25px;
+}
+
+.age-bmi-recommendations-simple li {
+    margin-bottom: 8px;
+}
+/* Dolphin ice cube */
+/* 
+#mid-left {
+    margin-top: 8rem;
+    margin-left: 4%;
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url(img/dolphin.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 99;
+}
+#left-main-background {
+    width: 350px;
+    height: 200px;
+    background: linear-gradient(to top left, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: -4px -4px 20px #a3d4ff80;
+} */
