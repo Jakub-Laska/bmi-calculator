@@ -5,6 +5,7 @@
 html, body {
     overflow-x: hidden;
   font-family: "Michroma", sans-serif;
+  user-select: auto;
 }
 h1, h2, h3, h4 {
   font-family: "Michroma", sans-serif;
@@ -29,6 +30,7 @@ table {
 }
 .bold {
     font-weight: 900;
+    font-size: .7vw;
 }
 #top-section {
     display: grid;
