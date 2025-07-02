@@ -12,6 +12,7 @@ html, body {
     color: #000;
     display: grid;
     overflow-x: hidden;
+    gap: 64px;
 }
 #top-section {
     display: grid;
@@ -22,17 +23,20 @@ html, body {
     border-bottom-right-radius: 4rem;
     height: 550px;
     background: linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%);
+    
 }
 #top-main-content {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    align-items: flex-start;
     text-align: justify;
     margin-top: 4rem;
     margin-left: 16%;
 }
 #top-main h1 {
     font-size: 4rem;
+    text-align: left;
 }
 #bmi-form {
     position: absolute;
@@ -167,18 +171,56 @@ button:hover {
 #bot-section {
     margin-top: 8rem;
     display: grid;
+    grid-auto-flow: row;
     grid-template-columns: 1fr 2fr 1fr;
 }
 #bot-section-container {
     grid-column: 2;
     text-align: justify;
-    width: 100%;
-    display: grid;
     gap: 64px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5vw;
 }
 #origin-para {
-    width: 100%;
-    font-size: 2rem;
+    font-size: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#who-bmi-chart {
+    font-size: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+strong {
+    font-size: 1.8vw;
+    align-self: flex-start;
+    margin-bottom: 16px;
+}
+span {
+    font-size: 1.3vw;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.age-bmi-recommendations-simple {
+    display: flex;
+    flex-direction: column;
+    font-size: .8vw;
+}
+.detail-section {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.bmi-table {
+    font-size: .8vw;
+    display: flex;
+    flex-direction: column;
 }
 .bmi-table-simple-container {
     max-width: 800px;
@@ -187,12 +229,6 @@ button:hover {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
 }
 
 .bmi-table-simple {
@@ -234,13 +270,20 @@ h1 {
 }
 
 .age-bmi-recommendations-simple ul {
-    list-style: disc; /* Default bullets */
+    list-style: disc;
     padding-left: 25px;
 }
 
 .age-bmi-recommendations-simple li {
     margin-bottom: 8px;
 }
+
+
+
+
+
+
+
 /* Dolphin ice cube */
 /* 
 #mid-left {
@@ -264,3 +307,11 @@ h1 {
     border-top-right-radius: 12px;
     box-shadow: -4px -4px 20px #a3d4ff80;
 } */
+
+#footer {
+    width: 100%;
+    height: 5vh;
+    background: linear-gradient(to top left, #d0e9ffcc 60%, #a3d4ff80 100%);
+    background-color: #000;
+    box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.233);
+}
