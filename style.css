@@ -1,11 +1,15 @@
 :root {
     --cold-blue: #f0f8ff;
+    
 }
 html, body {
     overflow-x: hidden;
-    font-family: sans-serif;
+  font-family: "Michroma", sans-serif;
 }
+h1, h2 {
+      font-family: "Michroma", sans-serif;
 
+}
 #container {
     width: 100vw;
     background-color: #fff;
@@ -13,6 +17,7 @@ html, body {
     display: grid;
     overflow-x: hidden;
     gap: 64px;
+
 }
 #top-section {
     display: grid;
@@ -168,11 +173,13 @@ button:hover {
     margin-right: 4%;
     grid-area: 1 / 5 / 2 / 6;
 }
+
 #bot-section {
     margin-top: 8rem;
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: 1fr 2fr 1fr;
+
 }
 #bot-section-container {
     grid-column: 2;
@@ -199,6 +206,7 @@ strong {
     font-size: 1.8vw;
     align-self: flex-start;
     margin-bottom: 16px;
+      font-family: "Michroma", sans-serif;
 }
 span {
     font-size: 1.3vw;
