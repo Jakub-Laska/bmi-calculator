@@ -240,7 +240,8 @@ strong {
 span {
     font-size: 1.3vw;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 4px;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .age-bmi-recommendations-simple {
