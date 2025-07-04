@@ -466,8 +466,9 @@ em {
 
 #fixed-header span {
     margin: 0;
-} 
-#fixed-header span:hover {
+    margin-left: 16px;
+}
+    #fixed-header span:hover {
     cursor: pointer;
     opacity: .8;
     transform: scale(1.1);
@@ -480,4 +481,5 @@ em {
     border-radius: 100%;
     padding: 6px;
     background-color: white;
+    margin-right: 16px;
 }
