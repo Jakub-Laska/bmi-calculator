@@ -1,14 +1,17 @@
 :root {
     --cold-blue: #f0f8ff;
-    
+    --primary-font: "Michroma";
+    --secondary-font: "Bebas Neue";
 }
 html, body {
     overflow-x: hidden;
-  font-family: "Michroma", sans-serif;
+  font-family: var(--primary-font), sans-serif;
   user-select: auto;
+    background-color: #fff;
+
 }
 h1, h2, h3, h4 {
-  font-family: "Michroma", sans-serif;
+  font-family: var(--primary-font), sans-serif;
         font-weight: 900;
         letter-spacing: 8px;
         text-shadow: none;
@@ -235,13 +238,14 @@ strong {
     font-size: 1.6vw;
     align-self: flex-start;
     margin-bottom: 16px;
-    font-family: "Michroma", sans-serif;
+    font-family: var(--primary-font), sans-serif;
 }
 span {
     font-size: 1.3vw;
     font-weight: 900;
     letter-spacing: 4px;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: var(--secondary-font), sans-serif;
+    margin-top: 32px;
 }
 
 .age-bmi-recommendations-simple {
@@ -331,6 +335,7 @@ span {
     height: 8vh;
     background: linear-gradient(to top left, #d0e9ffcc 60%, #a3d4ff80 100%);
     box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.233);
+    margin-top: 64px;
 }
 #bmi-limitations {
     position: relative;
@@ -392,3 +397,53 @@ span {
     box-shadow: -4px -4px 20px #a3d4ff80;
 } */
 
+
+.bmi-table.formula td {
+    background-color: #fff;
+    border: none;
+    font-family: var(--secondary-font);
+    font-size: 24px;
+    font-weight: 900;
+}
+
+
+
+  .fraction {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: var(--secondary-font);
+    font-family: var(--primary-font);
+    font-family: var(--secondary-font);
+
+  }
+
+  .fraction > span {
+    display: block;
+    padding: 0 6px;
+    font-family: var(--primary-font);
+    font-family: var(--secondary-font);
+
+    font-size: 24px;
+
+  }
+
+  .fraction .top {
+    border-bottom: 2px solid black;
+  }
+
+  .power {
+    font-size: 0.75em;
+    vertical-align: super;
+    text-shadow: none;
+  }
+
+em {
+    font-size: 8px;
+    vertical-align: super;
+}
+.hidden {
+    display: none;
+}
+.bmi-table-container {
+    margin-top: 32px;
+}

@@ -5,7 +5,6 @@ Body Mass Index calculator
 
 
 1. style it better less text more graphics
-2. style better bullet points of risks
 3. hover more info
 4. bmi formulas
 5. functionality
