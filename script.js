@@ -31,3 +31,11 @@
 
     lastScrollY = window.scrollY;
   });
+
+ const headerLogo = document.getElementById('fixed-header-logo');
+ headerLogo.addEventListener('click', () => {
+    window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+ });

@@ -466,7 +466,12 @@ em {
 #fixed-header span {
     margin: 0;
 } 
+#fixed-header span:hover {
+    cursor: pointer;
+    opacity: .8;
+    transform: scale(1.1);
 
+}
 #fixed-header.visible {
   transform: translateY(0);
 }
