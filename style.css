@@ -447,3 +447,26 @@ em {
 .bmi-table-container {
     margin-top: 32px;
 }
+#fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom right, #ffffffd2 20%, #d0e9ffd7 60%, #a3d4ffa5 100%);
+  box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.536);
+  height: 8vh;
+  padding: 24px;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+#fixed-header span {
+    margin: 0;
+} 
+
+#fixed-header.visible {
+  transform: translateY(0);
+}
