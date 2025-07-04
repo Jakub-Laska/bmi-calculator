@@ -104,7 +104,7 @@ table {
     width: 100%;
     height: 32px;
 }
-#metric-btn {
+.metric-btn {
     background-color: var(--cold-blue);
 }
 #gender-menu {
@@ -482,4 +482,8 @@ em {
     padding: 6px;
     background-color: white;
     margin-right: 16px;
+}
+#bmi-formula-title {
+    display: flex;
+    justify-content: space-between;
 }

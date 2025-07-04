@@ -40,8 +40,8 @@
                     <h3>Enter your Details below:</h3>
                     <div id="age-metric">
                         <input id="age-input" type="number" placeholder="age">
-                        <button id="metric-btn">Metric</button>
-                        <button id="imperial-btn">Imperial</button>
+                        <button class="metric-btn">Metric</button>
+                        <button class="imperial-btn">Imperial</button>
                     </div>
                     <div id="gender-menu">
                         <h4>Gender:</h4>
@@ -272,7 +272,14 @@
                 </div>
 
                 <div class="detail-section">
-                    <strong>How to Calculate BMI</strong>
+                    <div id="bmi-formula-title">
+                        <strong>How to Calculate BMI</strong>
+                    
+                        <div>
+                            <button class="metric-btn">metric</button>
+                            <button class="imperial-btn">imperial</button>
+                        </div>
+                    </div>
                     <p>
                         BMI is calculated using simple formulas based on your mass and height. Here are the
                         equations:
@@ -313,7 +320,7 @@
                             <tr>
                                 <td>BMI =</td>
                                 <td>
-                                703 ×
+                                703 *
                                 <div class="fraction">
                                     <span class="top">mass (lbs)</span>
                                     <span class="bottom">height<span class="power">2</span> (in)</span>
@@ -323,7 +330,7 @@
                             <tr>
                                 <td>BMI =</td>
                                 <td>
-                                703 ×
+                                703 *
                                 <div class="fraction">
                                     <span class="top">160</span>
                                     <span class="bottom">70<span class="power">2</span></span>
