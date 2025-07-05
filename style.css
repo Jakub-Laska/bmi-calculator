@@ -1,13 +1,17 @@
 :root {
     --cold-blue: #f0f8ff;
+    --primary-blue: #d0e9ff9a;
+    --primary-white: #fff;
     --primary-font: "Michroma";
     --secondary-font: "Bebas Neue";
+    --primary-font-color: #000;
+    --gradient: linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%);
 }
-html, body {
+body {
     overflow-x: hidden;
   font-family: var(--primary-font), sans-serif;
   user-select: auto;
-    background-color: #fff;
+    background-color: var(--primary-white);
 
 }
 h1, h2, h3, h4 {
@@ -24,8 +28,7 @@ table {
 }
 #container {
     width: 100vw;
-    background-color: #fff;
-    color: #000;
+    color: var(--primary-font-color);
     display: grid;
     overflow-x: hidden;
     gap: 64px;
@@ -43,7 +46,7 @@ table {
 #top-main {
     border-bottom-right-radius: 4rem;
     height: 550px;
-    background: linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%);
+    background: var(--gradient);
     
 }
 #top-main-content {
@@ -65,7 +68,7 @@ table {
     top: 4rem;
     right: 12%;
     padding: 2vw;
-    background-color: white;
+    background-color: var(--primary-white);
     box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.473);
     display: flex;
     font-size: .65vw;
@@ -178,10 +181,10 @@ button:hover {
 #left-main-background {
     width: 350px;
     height: 200px;
-    background: linear-gradient(to top left, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%);
+    background: var(--gradient);
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
-    box-shadow: -4px -4px 20px #a3d4ff80;
+    box-shadow: -4px -4px 20px var(--primary-blue);
 }
 #mid-right {
     display: flex;
@@ -267,7 +270,7 @@ span {
 .bmi-table-simple-container {
     max-width: 800px;
     margin: auto;
-    background-color: #fff;
+    background-color: var(--primary-white);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -324,7 +327,7 @@ span {
 
 .blue {
     display: grid;
-    background-color: #d0e9ff9a;
+    background-color: var(--primary-blue);
     width: 100%;
     grid-column: 1;
     border-top-left-radius: 100%;
@@ -333,7 +336,7 @@ span {
 #footer {
     width: 100%;
     height: 8vh;
-    background: linear-gradient(to top left, #d0e9ffcc 60%, #a3d4ff80 100%);
+    background: var(--gradient);
     box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.233);
     margin-top: 64px;
 }
@@ -360,10 +363,10 @@ span {
 #dolphin-two-background {
     width: 250px;
     height: 100px;
-    background: linear-gradient(to top right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%);
+    background: var(--gradient);
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    box-shadow: -4px -4px 10px #a3d4ff4b;
+    box-shadow: -4px -4px 10px var(--primary-blue);
 }
 /* maybe some text animation */
 /* h1, h2 {
@@ -399,7 +402,7 @@ span {
 
 
 .bmi-table.formula td {
-    background-color: #fff;
+    background-color: var(--primary-white);
     border: none;
     font-family: var(--secondary-font);
     font-size: 24px;
@@ -428,7 +431,7 @@ span {
   }
 
   .fraction .top {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--primary-font-color);
   }
 
   .power {
@@ -452,7 +455,7 @@ em {
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to bottom right, #ffffffd2 20%, #d0e9ffd7 60%, #a3d4ffa5 100%);
+  background: var(--gradient);
   box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.536);
   height: 8vh;
   padding: 24px;
@@ -479,7 +482,7 @@ em {
 }
 #dark-mode {
     border-radius: 100%;
-    padding: 6px;
+    padding: 12px;
     background-color: white;
     margin-right: 16px;
 }
@@ -497,5 +500,18 @@ em {
     background-color: var(--cold-blue);
     pointer-events: none;
     cursor: not-allowed;
+
+}
+.dark-mode-btn-icon {
+    background-image: url(img/dark-mode.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.light-mode-btn-icon {
+    background-image: url(img/light-mode.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 
 }

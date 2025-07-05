@@ -7,7 +7,7 @@ Body Mass Index calculator
 1. style it better less text more graphics
 2. language pl/en btn
 3. hover more info
-4. bmi formulas functionality
+4. bmi formulas functionality now only fuse it with menu btns
 5. functionality
 6. better menu
 7. dark mode

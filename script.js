@@ -68,3 +68,36 @@ metricBtn.addEventListener('click', () => {
     imperialBtn.classList.toggle('disabled-btn');
 
 })
+
+// dark mode
+
+const darkmodeBtn =  document.getElementById('dark-mode');
+
+darkmodeBtn.addEventListener('click', () => {
+    darkmodeBtn.classList.toggle('light-mode-btn-icon');
+let isDark = false;
+if (isDark) {
+    enableLightMode();
+  } else {
+    enableDarkMode();
+  }
+  isDark = !isDark;
+})
+
+function enableDarkMode() {
+  const r = document.documentElement;
+  r.style.setProperty('--cold-blue', '#1e2a38');
+  r.style.setProperty('--primary-blue', '#2e3b4e');
+  r.style.setProperty('--primary-white', '#1a1a1a');
+  r.style.setProperty('--primary-font-color', '#f0f0f0');
+  r.style.setProperty('--gradient', 'linear-gradient(to bottom right, #1a1a1a 20%, #2e3b4e 60%, #3b4d61 100%)');
+}
+
+function enableLightMode() {
+  const r = document.documentElement;
+  r.style.setProperty('--cold-blue', '#f0f8ff');
+  r.style.setProperty('--primary-blue', '#d0e9ff9a');
+  r.style.setProperty('--primary-white', '#fff');
+  r.style.setProperty('--primary-font-color', '#000');
+  r.style.setProperty('--gradient', 'linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%)');
+}
