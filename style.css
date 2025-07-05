@@ -486,4 +486,16 @@ em {
 #bmi-formula-title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+#bmi-formula-title button {
+    font-size: .5vw;
+    padding: 6px;
+}
+
+.disabled-btn {
+    background-color: var(--cold-blue);
+    pointer-events: none;
+    cursor: not-allowed;
+
 }

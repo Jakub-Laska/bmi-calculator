@@ -276,8 +276,8 @@
                         <strong>How to Calculate BMI</strong>
                     
                         <div>
-                            <button class="metric-btn">metric</button>
-                            <button class="imperial-btn">imperial</button>
+                            <button id="metric-btn" class="disabled-btn">metric</button>
+                            <button id="imperial-btn">imperial</button>
                         </div>
                     </div>
                     <p>
@@ -287,7 +287,7 @@
 
 
 
-                    <div class="bmi-table-container">
+                    <div class="bmi-table-container" id="metric-formula">
                         <span>SI (Metric) Units (kilograms and meters):</span>
                         <table class="bmi-table formula">
                         <tr>
@@ -314,7 +314,7 @@
                         <em>*Example: For a 72.57-kilogram individual who is 1.778 centimeters tall:</em>
                     </div>
 
-                        <div class="bmi-table-container hidden">
+                        <div class="bmi-table-container hidden" id="imperial-formula">
                             <span>US Customary Units (pounds and inches):</span>
                             <table class="bmi-table formula">
                             <tr>
