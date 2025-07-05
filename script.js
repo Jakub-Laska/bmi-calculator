@@ -72,10 +72,13 @@ metricBtn.addEventListener('click', () => {
 // dark mode
 
 const darkmodeBtn =  document.getElementById('dark-mode');
+let isDark = false;
 
 darkmodeBtn.addEventListener('click', () => {
     darkmodeBtn.classList.toggle('light-mode-btn-icon');
-let isDark = false;
+    const whoGraph = document.getElementById('who-graph');
+    whoGraph.classList.toggle('dark-who-graph');
+
 if (isDark) {
     enableLightMode();
   } else {
