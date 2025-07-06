@@ -131,6 +131,11 @@ table {
     height: 32px;
 
 }
+#gender-menu-btns div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 #gender-menu h4 {
     text-shadow: none;
 }
@@ -461,7 +466,11 @@ em {
   align-items: center;
   justify-content: space-between;
 }
-
+#fixed-header-btns {
+    display: flex;
+    align-items: center;
+    font-size: .5vw;
+}
 #fixed-header span {
     margin: 0;
     margin-left: 16px;
@@ -480,6 +489,35 @@ em {
     padding: 12px;
     background-color: white;
     margin-right: 16px;
+}
+#lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 24px;
+        background-color: white;
+    margin-right: 16px;
+    width: 72px;
+    height: 32px;
+    padding: 12px 6px;
+}
+.lang-btn-icon {
+    background-image: url(img/english.svg);
+    padding: 8px;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: solid 2px lightgrey;
+}
+.lang-btn-icon.lang-clicked {
+    background-image: url(img/polish.svg);
+    order: 2;
+}
+.lang-btn-icon,
+#lang-btn-text {
+    transition: 0.2s ease-in-out;
+
 }
 #bmi-formula-title {
     display: flex;

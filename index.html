@@ -19,14 +19,23 @@
     <div id="container">
         <div id="fixed-header">
             <span id="fixed-header-logo" title="go up">FishScale</span>
-            <button id="dark-mode" class="dark-mode-btn-icon"></button>
+
+            <div id="fixed-header-btns">
+
+                <button id="lang-btn">
+                <div class="lang-btn-icon"></div>
+                <div id="lang-btn-text">EN</div>
+                </button>
+
+                <button id="dark-mode" class="dark-mode-btn-icon"></button>
+            </div>
         </div>
         <div id="top-section">
 
             <div id="top-main">
                 <div id="top-main-content" class="animate-on-scroll">
-                    <h1><span>FishScale</span><br>Body Mass <br>Index Calculator</h1>
-                    <p>Enter your height and weight to see how your numbers stack
+                    <h1 data-translate-key="1"><span>FishScale</span><br> Body Mass <br>Index Calculator</h1>
+                    <p data-translate-key="2">Enter your height and weight to see how your numbers stack
                         up using the Body Mass Index (BMI) scale. This easy-to-use
                         calculator gives you a quick insight into whether you're
                         underweight, at a healthy weight, overweight, or obese.
@@ -37,25 +46,25 @@
 
             <div id="bmi-form" class="animate-on-scroll">
                 <form>
-                    <h3>Enter your Details below:</h3>
+                    <h3 data-translate-key="3">Enter your Details below:</h3>
                     <div id="age-metric">
                         <input id="age-input" type="number" placeholder="age">
-                        <button class="metric-btn">Metric</button>
-                        <button class="imperial-btn">Imperial</button>
+                        <button class="metric-btn" data-translate-key="4">Metric</button>
+                        <button class="imperial-btn" data-translate-key="5">Imperial</button>
                     </div>
                     <div id="gender-menu">
-                        <h4>Gender:</h4>
+                        <h4 data-translate-key="6">Gender:</h4>
                         <div id="gender-menu-btns">
-                            <button id="male-btn"></button>male
-                            <button id="female-btn"></button>female
-                            <button id="other-btn"></button>other
+                            <div data-translate-key="7"><button id="male-btn"></button>male</div>
+                            <div data-translate-key="8"><button id="female-btn"></button>female</div>
+                            <div data-translate-key="9"><button id="other-btn"></button>other</div>
                         </div>
                     </div>
                     <input id="weight-input" type="number" placeholder="weight">
                     <input id="height-input" type="number" placeholder="height">
                     <div id="submit-menu">
-                        <button>clear</button>
-                        <button>calculate</button>
+                        <button data-translate-key="10">clear</button>
+                        <button data-translate-key="11">calculate</button>
                     </div>
                 </form>
             </div>
@@ -72,8 +81,8 @@
                 </div>
             </div>
             <div id="mid-right" class="animate-on-scroll">
-                <h2>What your BMI result means...</h2>
-                <p>Your BMI falls into a specific category that reflects your
+                <h2 data-translate-key="12">What your BMI result means...</h2>
+                <p data-translate-key="13">Your BMI falls into a specific category that reflects your
                     general weight status. A lower BMI may indicate you're
                     underweight, while a higher BMI could suggest overweight
                     or obesity. These categories help assess potential health
@@ -90,65 +99,64 @@
 
 
                 <div class="bmi-table animate-on-scroll">
-                    <strong>BMI Categories for Adults</strong>
+                    <strong data-translate-key="14">BMI Categories for Adults</strong>
                     <table class="bmi-table-simple">
                         <thead>
                             <tr>
-                                <th>Category</th>
+                                <th data-translate-key="15">Category</th>
                                 <th>BMI (kg/m²)</th>
-                                <th>Body Type</th>
-                                <th>Associated Health Risk</th>
+                                <th data-translate-key="16">Body Type</th>
+                                <th data-translate-key="17">Associated Health Risk</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="category-starvation">
-                                <td class="bold">Starvation</td>
+                                <td data-translate-key="18">Starvation</td>
                                 <td>> 16.0</td>
-                                <td>Emaciated</td>
-                                <td>Severe risk of organ failure, weakened immunity, and nutrient deficiency</td>
+                                <td data-translate-key="19">Emaciated</td>
+                                <td data-translate-key="20">Severe risk of organ failure, weakened immunity, and nutrient deficiency</td>
                             </tr>
                             <tr class="category-underweight-severe">
-                                <td class="bold">Severe Underweight</td>
+                                <td class="bold" data-translate-key="21">Severe Underweight</td>
                                 <td>16.0 - 16.99</td>
-                                <td>Very thin</td>
-                                <td>High risk of infections, infertility, and bone loss</td>
+                                <td data-translate-key="22">Very thin</td>
+                                <td data-translate-key="23">High risk of infections, infertility, and bone loss</td>
                             </tr>
                             <tr class="category-underweight">
-                                <td class="bold">Underweight</td>
+                                <td class="bold" data-translate-key="24">Underweight</td>
                                 <td>17.0 - 18.49</td>
-                                <td>Thin</td>
-                                <td>Increased risk of fatigue, anemia, and lowered immunity</td>
+                                <td data-translate-key="25">Thin</td>
+                                <td data-translate-key="26">Increased risk of fatigue, anemia, and lowered immunity</td>
                             </tr>
                             <tr class="category-normal">
-                                <td class="bold">Desirable Weight</td>
+                                <td class="bold" data-translate-key="27">Desirable Weight</td>
                                 <td>18.5 - 24.99</td>
-                                <td>Fit / Normal</td>
-                                <td>Lowest health risk - optimal range</td>
+                                <td data-translate-key="28">Fit / Normal</td>
+                                <td data-translate-key="29">Lowest health risk - optimal range</td>
                             </tr>
                             <tr class="category-overweight">
-                                <td class="bold">Overweight</td>
+                                <td class="bold" data-translate-key="30">Overweight</td>
                                 <td>25.0 - 29.99</td>
-                                <td>Stocky / Heavier</td>
-                                <td>Elevated risk of heart disease, joint strain, and high blood pressure</td>
+                                <td data-translate-key="31">Stocky / Heavier</td>
+                                <td data-translate-key="32">Elevated risk of heart disease, joint strain, and high blood pressure</td>
                             </tr>
                             <tr class="category-obese-1">
-                                <td class="bold">Obesity Class I</td>
+                                <td class="bold" data-translate-key='33'>Obesity Class I</td>
                                 <td>30.0 - 34.99</td>
-                                <td>Heavyset</td>
-                                <td>High risk of type 2 diabetes, hypertension, and cardiovascular issues</td>
+                                <td data-translate-key="34">Heavyset</td>
+                                <td data-translate-key="35">High risk of type 2 diabetes, hypertension, and cardiovascular issues</td>
                             </tr>
                             <tr class="category-obese-2">
-                                <td class="bold">Obesity Class II (Severe)</td>
+                                <td class="bold" data-translate-key="36">Obesity Class II (Severe)</td>
                                 <td>35.0 - 39.99</td>
-                                <td>Very heavy</td>
-                                <td>Very high risk of chronic diseases and mobility issues</td>
+                                <td data-translate-key="37">Very heavy</td>
+                                <td data-translate-key="38">Very high risk of chronic diseases and mobility issues</td>
                             </tr>
                             <tr class="category-obese-3">
-                                <td class="bold">Obesity Class III (Morbid)</td>
-                                <td>
-                                    < 40.0</td>
-                                <td>Morbidly obese</td>
-                                <td>Critical risk of life-threatening conditions including stroke, heart disease, and
+                                <td class="bold" data-translate-key="39">Obesity Class III (Morbid)</td>
+                                <td>< 40.0</td>
+                                <td data-translate-key="40">Morbidly obese</td>
+                                <td data-translate-key="41">Critical risk of life-threatening conditions including stroke, heart disease, and
                                     sleep apnea</td>
                             </tr>
                         </tbody>
@@ -167,21 +175,21 @@
                     </ul>
                 </div>
                 <div id="origin-para" class="animate-on-scroll">
-                    <strong>The Origin of BMI</strong>
-                    <p>The Body Mass Index (BMI) was first conceived in 1832 by <u data-info="Lambert Adolphe Jacques Quételet (b. Feb 22, 1796, Ghent - d. Feb 17, 1874, Brussels) was a Belgian astronomer, mathematician, statistician, meteorologist, sociologist, and criminologist. He developed the Body Mass Index (BMI) and posed the Quetelet question: Why does crime vary across social groups?">Adolphe Quetelet</u>,
+                    <strong data-translate-key="42">The Origin of BMI</strong>
+                    <p data-translate-key="43">The Body Mass Index (BMI) was first conceived in 1832 by <u data-translate-key="44" data-info="Lambert Adolphe Jacques Quételet (b. Feb 22, 1796, Ghent - d. Feb 17, 1874, Brussels) was a Belgian astronomer, mathematician, statistician, meteorologist, sociologist, and criminologist. He developed the Body Mass Index (BMI) and posed the Quetelet question: Why does crime vary across social groups?">Adolphe Quetelet</u>,
                         a Belgian mathematician.
                         Quetelet conducted extensive research, including studies to characterize
                         the "average person." He observed a consistent relationship: human weight
                         tends to increase proportionally to the square of a person's height. This
                         discovery led to his "Quetelet's Index."
                         This index was later renamed the Body Mass Index (BMI) in 1972 by American
-                        physiologist <u data-info="American physiologist who popularized the term Body Mass Index in 1972.">Ancel Keys</u>.
+                        physiologist <u data-translate-key="45" data-info="American physiologist who popularized the term Body Mass Index in 1972.">Ancel Keys</u>.
                     </p>
                 </div>
                 <div id="who-bmi-chart" class="animate-on-scroll">
-                    <strong>BMI chart for adults</strong>
-                    <p>BMI categories, as depicted in this graph,
-                        are derived from <u data-info="World Health Organization, a specialized agency of the United Nations responsible for international public health.">World Health Organization</u> data.
+                    <strong data-translate-key='46'>BMI chart for adults</strong>
+                    <p data-translate-key="47">BMI categories, as depicted in this graph,
+                        are derived from <u data-translate-key="48" data-info="World Health Organization, a specialized agency of the United Nations responsible for international public health.">World Health Organization</u> data.
                         Major classifications are further broken down by dashed
                         line subdivisions.</p>
                     <div id="who-graph" class="light-who-graph"></div>
@@ -189,26 +197,25 @@
 
 
                 <div class="detail-section animate-on-scroll">
-                    <strong>Understanding Your BMI: Risks, Limitations & Calculation</strong><br>
-                    <span>Risks Associated with Being Overweight</span>
-                    <p>
+                    <strong data-translate-key="49">Understanding Your BMI: Risks, Limitations & Calculation</strong><br>
+                    <span data-translate-key="50">Risks Associated with Being Overweight</span>
+                    <p data-translate-key="51">
                         Carrying excess weight can significantly impact your health. It's linked to a range of
                         serious conditions, including:
                     </p>
                     <ul>
-                        <li>High blood pressure.</li>
-                        <li>Unhealthy cholesterol levels (high "bad" LDL, low "good" HDL) and high triglycerides.
-                        </li>
-                        <li>Type II diabetes.</li>
-                        <li>Heart disease and stroke.</li>
-                        <li>Gallbladder issues.</li>
-                        <li>Osteoarthritis (joint wear and tear).</li>
-                        <li>Sleep apnea and breathing difficulties.</li>
-                        <li>Increased risk of certain cancers (like endometrial, breast, colon, kidney, liver).</li>
-                        <li>Reduced quality of life, body aches, and difficulty with physical activities.</li>
-                        <li>A higher risk of mortality overall compared to those with a healthy BMI.</li>
+                        <li data-translate-key="52">High blood pressure.</li>
+                        <li data-translate-key="53">Unhealthy cholesterol levels (high "bad" LDL, low "good" HDL) and high triglycerides.</li>
+                        <li data-translate-key="54">Type II diabetes.</li>
+                        <li data-translate-key="55">Heart disease and stroke.</li>
+                        <li data-translate-key="56">Gallbladder issues.</li>
+                        <li data-translate-key="57">Osteoarthritis (joint wear and tear).</li>
+                        <li data-translate-key="58">Sleep apnea and breathing difficulties.</li>
+                        <li data-translate-key="59">Increased risk of certain cancers (like endometrial, breast, colon, kidney, liver).</li>
+                        <li data-translate-key="60">Reduced quality of life, body aches, and difficulty with physical activities.</li>
+                        <li data-translate-key="61">A higher risk of mortality overall compared to those with a healthy BMI.</li>
                     </ul>
-                    <p>
+                    <p data-translate-key="62">
                         Given these potential consequences, striving for a BMI below 25 kg/m² is generally
                         recommended. However, always consult a healthcare professional to discuss your personal
                         health goals and lifestyle adjustments.
@@ -216,49 +223,49 @@
                 </div>
 
                 <div class="detail-section animate-on-scroll">
-                    <strong>Risks Associated with Being Underweight</strong>
-                    <span>
+                    <strong data-translate-key="63">Risks Associated with Being Underweight</strong>
+                    <span data-translate-key="64">
                         Being underweight also presents its own set of health challenges:
                     </span>
                     <ul>
-                        <li>Malnutrition, vitamin deficiencies, and anemia.</li>
-                        <li>Osteoporosis, leading to weaker bones and a higher risk of fractures.</li>
-                        <li>Weakened immune function.</li>
-                        <li>Potential growth and development issues, especially for younger individuals.</li>
-                        <li>For women, hormonal imbalances can affect reproductive health and increase miscarriage
+                        <li data-translate-key="65">Malnutrition, vitamin deficiencies, and anemia.</li>
+                        <li data-translate-key="66">Osteoporosis, leading to weaker bones and a higher risk of fractures.</li>
+                        <li data-translate-key="67">Weakened immune function.</li>
+                        <li data-translate-key="68">Potential growth and development issues, especially for younger individuals.</li>
+                        <li data-translate-key="69">For women, hormonal imbalances can affect reproductive health and increase miscarriage
                             risk in early pregnancy.</li>
-                        <li>Increased complications if surgery is needed.</li>
-                        <li>A generally higher risk of mortality compared to those with a healthy BMI.</li>
+                        <li data-translate-key="70">Increased complications if surgery is needed.</li>
+                        <li data-translate-key="71">A generally higher risk of mortality compared to those with a healthy BMI.</li>
                     </ul>
-                    <p>
+                    <p data-translate-key="72">
                         Sometimes, being underweight can be a symptom of an underlying health condition like
-                        <u data-info="Anorexia nervosa is an eating disorder characterized by weight loss, difficulty maintaining an appropriate body weight, and often a distorted body image. It can have serious health consequences.">anorexia nervosa</u>. If you or someone you know is underweight without an obvious reason, it's
+                        <u data-translate-key="73" data-info="Anorexia nervosa is an eating disorder characterized by weight loss, difficulty maintaining an appropriate body weight, and often a distorted body image. It can have serious health consequences.">anorexia nervosa</u>. If you or someone you know is underweight without an obvious reason, it's
                         wise to consult a doctor.
                     </p>
                 </div>
 
                 <div class="detail-section blue animate-on-scroll" id="bmi-limitations">
-                    <strong>Understanding BMI's Limitations</strong>
-                    <p>
+                    <strong data-translate-key="74">Understanding BMI's Limitations</strong>
+                    <p data-translate-key="75">
                         While BMI is a widely used and helpful tool for estimating healthy body weight, it's not a
                         perfect measure. It's essentially a calculation of excess body weight, not excess body fat,
                         and it doesn't account for individual body composition.
                     </p>
-                    <p>
+                    <p data-translate-key="76">
                         Factors like age, sex, ethnicity, muscle mass, and activity level can influence BMI. For
                         instance:
                     </p>
                     <ul>
-                        <li>Older adults may have more body fat than younger adults at the same BMI.</li>
-                        <li>Women often have more body fat than men at an equivalent BMI.</li>
-                        <li>Athletes, especially bodybuilders, might have a higher BMI due to significant muscle
+                        <li data-translate-key="77">Older adults may have more body fat than younger adults at the same BMI.</li>
+                        <li data-translate-key="78">Women often have more body fat than men at an equivalent BMI.</li>
+                        <li data-translate-key="79">Athletes, especially bodybuilders, might have a higher BMI due to significant muscle
                             mass (muscle weighs more than fat), even if they are very healthy.</li>
                     </ul>
-                    <p>
+                    <p data-translate-key="80">
                         In children and adolescents, similar factors apply, and BMI can also be influenced by height
                         and sexual maturation.
                     </p>
-                    <p>
+                    <p data-translate-key="81">
                         Despite these limitations, BMI is a fairly good indicator of body fat for 90-95% of the
                         population. It's best used as one tool among several (like waist circumference or body fat
                         percentage) to determine a truly healthy weight for an individual.
@@ -268,14 +275,14 @@
 
                 <div class="detail-section animate-on-scroll">
                     <div id="bmi-formula-title">
-                        <strong>How to Calculate BMI</strong>
+                        <strong data-translate-key="82">How to Calculate BMI</strong>
                     
                         <div>
-                            <button id="metric-btn" class="disabled-btn">metric</button>
-                            <button id="imperial-btn">imperial</button>
+                            <button id="metric-btn" class="disabled-btn" data-translate-key="83">metric</button>
+                            <button id="imperial-btn" data-translate-key="84">imperial</button>
                         </div>
                     </div>
-                    <p>
+                    <p data-translate-key="85">
                         BMI is calculated using simple formulas based on your mass and height. Here are the
                         equations:
                     </p>
@@ -283,14 +290,14 @@
 
 
                     <div class="bmi-table-container" id="metric-formula">
-                        <span>SI (Metric) Units (kilograms and meters):</span>
+                        <span data-translate-key="86">SI (Metric) Units (kilograms and meters):</span>
                         <table class="bmi-table formula">
                         <tr>
                             <td>BMI =</td>
                             <td>
                             <div class="fraction">
-                                <span class="top">mass (kg)</span>
-                                <span class="bottom">height<span class="power">2</span> (m)</span>
+                                <span class="top" data-translate-key="87">mass (kg)</span>
+                                <span class="bottom" data-translate-key="88">height<span class="power">2</span> (m)</span>
                             </div>
                             </td>
                         </tr>
@@ -306,19 +313,19 @@
 
                         </tr>
                         </table>
-                        <em>*Example: For a 72.57-kilogram individual who is 1.778 centimeters tall:</em>
+                        <em data-translate-key="89">*Example: For a 72.57-kilogram individual who is 1.778 centimeters tall:</em>
                     </div>
 
                         <div class="bmi-table-container hidden" id="imperial-formula">
-                            <span>US Customary Units (pounds and inches):</span>
+                            <span data-translate-key="90">US Customary Units (pounds and inches):</span>
                             <table class="bmi-table formula">
                             <tr>
                                 <td>BMI =</td>
                                 <td>
                                 703 *
                                 <div class="fraction">
-                                    <span class="top">mass (lbs)</span>
-                                    <span class="bottom">height<span class="power">2</span> (in)</span>
+                                    <span class="top" data-translate-key="91">mass (lbs)</span>
+                                    <span class="bottom" data-translate-key="92">height<span class="power">2</span> (in)</span>
                                 </div>
                                 </td>
                             </tr>
@@ -334,7 +341,7 @@
                                 </td>
                             </tr>
                             </table>
-                            <em>*Example: For a 160-pound individual who is 5'10" (70 inches tall):</em>
+                            <em data-translate-key="93">*Example: For a 160-pound individual who is 5'10" (70 inches tall):</em>
                         </div>
 
                     </div>
