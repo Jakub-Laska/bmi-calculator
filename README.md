@@ -10,7 +10,6 @@ Body Mass Index calculator
 4. bmi formulas functionality now only fuse it with menu btns
 5. functionality
 6. better menu
-7. dark mode
 8. ice cube icon maybe or dolphin
 9. header icon
 13. title icons

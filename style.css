@@ -538,3 +538,15 @@ em {
 .dark-who-graph {
     background: url(img/bmi-chart-dark.png);
 }
+
+.animate-on-scroll {
+  opacity: .1;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

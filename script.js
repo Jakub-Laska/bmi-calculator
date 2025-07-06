@@ -15,7 +15,7 @@
 
     if (!scrolledPastVH) {
       // Hide header completely before 100vh
-    //   header.classList.remove('visible');
+      header.classList.remove('visible');
     } else {
       header.classList.add('visible'); // Ensure it's enabled
 
@@ -103,3 +103,19 @@ function enableLightMode() {
   r.style.setProperty('--primary-font-color', '#000');
   r.style.setProperty('--gradient', 'linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%)');
 }
+// text animation on sroll
+
+// Select all text elements you want to animate
+const textElements = document.querySelectorAll('.animate-on-scroll');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible'); // Add class when in viewport
+    }
+  });
+}, {
+  threshold: 0.1 // Trigger when 10% of element is visible
+});
+
+textElements.forEach(el => observer.observe(el));
