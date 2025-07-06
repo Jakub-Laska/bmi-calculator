@@ -62,7 +62,7 @@ table {
 #top-main-content {
     display: flex;
     flex-direction: column;
-    width: 750px;
+    width: 40vw;
     gap: 16px;
     align-items: flex-start;
     text-align: justify;
@@ -70,8 +70,11 @@ table {
     margin-left: 16%;
 }
 #top-main h1 {
-    font-size: 3vw;
+    font-size: 2.5vw;
     text-align: left;
+}
+#top-main p {
+    font-size: 1vw;
 }
 #bmi-form {
     position: absolute;
@@ -204,6 +207,7 @@ button:hover {
     margin-top: 8rem;
     margin-right: 4%;
     grid-area: 1 / 5 / 2 / 6;
+    font-size: .8vw;
 }
 
 #bot-section {
@@ -550,3 +554,6 @@ em {
   transform: translateY(0);
 }
 
+.underscore {
+    text-decoration: underline;
+}
