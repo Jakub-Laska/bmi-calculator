@@ -42,7 +42,7 @@ table {
     display: grid;
     overflow-x: hidden;
     gap: 64px;
-
+    z-index: 1;
 }
 .bold {
     font-weight: 900;
@@ -227,6 +227,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     font-size: 1.5vw;
+    z-index: 1;
 }
 #origin-para {
     font-size: 1.5vw;
@@ -250,6 +251,7 @@ li::marker {
     flex-direction: column;
     align-items: center;
     gap: 16px;
+    z-index: -1;
 }
 strong {
     font-size: 1.6vw;
@@ -356,32 +358,11 @@ span {
 }
 #bmi-limitations {
     position: relative;
+    z-index: -1;
+
 }
 
-#dolphin-two {
-    position: absolute;
-    top: 50%;
-    right: -40%;
-    width: 200px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    background-image: url(img/dolphin-two.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: 99;
-    opacity: 0.8;
-}
-#dolphin-two-background {
-    width: 250px;
-    height: 100px;
-    background: var(--gradient);
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    box-shadow: -4px -4px 10px var(--primary-blue);
-}
+
 /* maybe some text animation */
 /* h1, h2 {
       font-family: "Michroma", sans-serif;
@@ -554,6 +535,34 @@ em {
   transform: translateY(0);
 }
 
-.underscore {
-    text-decoration: underline;
+u {
+    cursor: help;
+    position: relative;
+    display: inline-block;
+    background-color: var(--cold-blue);
+}
+
+.popup-info {
+    position: absolute;
+    z-index: 9999;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 400px;
+    width: max-content;       
+    min-width: 200px;         
+    text-align: justify;
+    background: var(--gradient);
+    border-radius: 16px;
+    box-shadow: -4px -4px 10px var(--primary-blue);
+    padding: 16px 24px;       
+    font-size: 0.6vw;
+    font-weight: 900;
+    word-break: break-word;  
+}
+
+.popup-info u {
+    text-align: justify;
+    hyphens: auto;
+    margin: 0;
 }

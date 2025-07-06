@@ -1,46 +1,46 @@
- 
- 
- 
- 
- 
- 
- 
- //  FIXED HEADER TOGGLE
- 
- const header = document.getElementById('fixed-header');
-  let lastScrollY = window.scrollY;
 
-  window.addEventListener('scroll', () => {
+
+
+
+
+
+
+//  FIXED HEADER TOGGLE
+
+const header = document.getElementById('fixed-header');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
     const scrolledPastVH = window.scrollY > window.innerHeight;
 
     if (!scrolledPastVH) {
-      // Hide header completely before 100vh
-      header.classList.remove('visible');
+        // Hide header completely before 100vh
+        header.classList.remove('visible');
     } else {
-      header.classList.add('visible'); // Ensure it's enabled
+        header.classList.add('visible'); // Ensure it's enabled
 
-      if (window.scrollY > lastScrollY) {
-        // Scrolling down
-      header.classList.remove('visible');
+        if (window.scrollY > lastScrollY) {
+            // Scrolling down
+            header.classList.remove('visible');
 
-      } else {
-        // Scrolling up
-      header.classList.add('visible');
-      }
+        } else {
+            // Scrolling up
+            header.classList.add('visible');
+        }
     }
 
     lastScrollY = window.scrollY;
-  });
+});
 
 
 // go to the top
- const headerLogo = document.getElementById('fixed-header-logo');
- headerLogo.addEventListener('click', () => {
+const headerLogo = document.getElementById('fixed-header-logo');
+headerLogo.addEventListener('click', () => {
     window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
- });
+        top: 0,
+        behavior: 'smooth'
+    });
+});
 
 
 // mbi formula buttons
@@ -71,7 +71,7 @@ metricBtn.addEventListener('click', () => {
 
 // dark mode
 
-const darkmodeBtn =  document.getElementById('dark-mode');
+const darkmodeBtn = document.getElementById('dark-mode');
 let isDark = false;
 
 darkmodeBtn.addEventListener('click', () => {
@@ -79,29 +79,29 @@ darkmodeBtn.addEventListener('click', () => {
     const whoGraph = document.getElementById('who-graph');
     whoGraph.classList.toggle('dark-who-graph');
 
-if (isDark) {
-    enableLightMode();
-  } else {
-    enableDarkMode();
-  }
-  isDark = !isDark;
+    if (isDark) {
+        enableLightMode();
+    } else {
+        enableDarkMode();
+    }
+    isDark = !isDark;
 })
 
 function enableDarkMode() {
-  const r = document.documentElement;
-  r.style.setProperty('--cold-blue', '#1e2a38');
-  r.style.setProperty('--primary-blue', '#2e3b4e');
-  r.style.setProperty('--primary-white', '#1a1a1a');
-  r.style.setProperty('--primary-font-color', '#f0f0f0');
-  r.style.setProperty('--gradient', 'linear-gradient(to bottom right, #1a1a1a 20%, #2e3b4e 60%, #3b4d61 100%)');
+    const r = document.documentElement;
+    r.style.setProperty('--cold-blue', '#1e2a38');
+    r.style.setProperty('--primary-blue', '#2e3b4e');
+    r.style.setProperty('--primary-white', '#1a1a1a');
+    r.style.setProperty('--primary-font-color', '#f0f0f0');
+    r.style.setProperty('--gradient', 'linear-gradient(to bottom right, #1a1a1a 20%, #2e3b4e 60%, #3b4d61 100%)');
 }
 function enableLightMode() {
-  const r = document.documentElement;
-  r.style.setProperty('--cold-blue', '#f0f8ff');
-  r.style.setProperty('--primary-blue', '#d0e9ff9a');
-  r.style.setProperty('--primary-white', '#fff');
-  r.style.setProperty('--primary-font-color', '#000');
-  r.style.setProperty('--gradient', 'linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%)');
+    const r = document.documentElement;
+    r.style.setProperty('--cold-blue', '#f0f8ff');
+    r.style.setProperty('--primary-blue', '#d0e9ff9a');
+    r.style.setProperty('--primary-white', '#fff');
+    r.style.setProperty('--primary-font-color', '#000');
+    r.style.setProperty('--gradient', 'linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%)');
 }
 // text animation on sroll
 
@@ -109,13 +109,39 @@ function enableLightMode() {
 const textElements = document.querySelectorAll('.animate-on-scroll');
 
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add('visible'); // Add class when in viewport
-    }
-  });
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible'); // Add class when in viewport
+        }
+    });
 }, {
-  threshold: 0.1 // Trigger when 10% of element is visible
+    threshold: 0.1 // Trigger when 10% of element is visible
 });
 
 textElements.forEach(el => observer.observe(el));
+
+
+// more info hover popup
+const underscored = document.querySelectorAll('u');
+
+underscored.forEach(e => {
+    e.addEventListener('mouseenter', () => {
+        e.style.backgroundColor = 'transparent';
+        const popupInfo = document.createElement('div');
+        popupInfo.classList.add('popup-info')
+        const info = e.getAttribute('data-info') || 'no info';
+        popupInfo.textContent = info;
+        e.appendChild(popupInfo);
+    });
+
+    e.addEventListener('mouseleave', () => {
+        e.style.backgroundColor = 'var(--cold-blue)';
+
+        const popupInfo = e.querySelector('.popup-info');
+        if (popupInfo) {
+            setTimeout(() => {
+            e.removeChild(popupInfo);                
+            }, 300);
+        }
+    });
+})
