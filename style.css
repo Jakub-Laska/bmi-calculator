@@ -6,6 +6,16 @@
     --secondary-font: "Bebas Neue";
     --primary-font-color: #000;
     --gradient: linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%);
+
+
+    --transition-speed: 0s;
+}
+
+
+* {
+  transition: background-color var(--transition-speed),
+              color var(--transition-speed),
+              border-color var(--transition-speed);
 }
 body {
     overflow-x: hidden;
@@ -298,12 +308,12 @@ span {
     background-color: var(--cold-blue);
 }
 
-.bmi-table-simple .category-starvation td:first-child { background-color: #ced4da; }
-.bmi-table-simple .category-underweight-severe td:first-child { background-color: #d1ecf1; }
-.bmi-table-simple .category-underweight td:first-child { background-color: #d1ecf1; }
-.bmi-table-simple .category-normal td:first-child { background-color: #d4edda; }
-.bmi-table-simple .category-overweight td:first-child { background-color: #fff3cd; }
-.bmi-table-simple .category-obese-1 td:first-child { background-color: #f8d7da; }
+.bmi-table-simple .category-starvation td:first-child { background-color: #ced4da; color: black;}
+.bmi-table-simple .category-underweight-severe td:first-child { background-color: #d1ecf1;  color: black; }
+.bmi-table-simple .category-underweight td:first-child { background-color: #d1ecf1; color: black;}
+.bmi-table-simple .category-normal td:first-child { background-color: #d4edda; color: black;}
+.bmi-table-simple .category-overweight td:first-child { background-color: #fff3cd; color: black;}
+.bmi-table-simple .category-obese-1 td:first-child { background-color: #f8d7da; color: black;}
 .bmi-table-simple .category-obese-2 td:first-child { background-color: #dc3545; color: white;}
 .bmi-table-simple .category-obese-3 td:first-child { background-color: #a71d2a; color: white;}
 

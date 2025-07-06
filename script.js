@@ -15,7 +15,7 @@
 
     if (!scrolledPastVH) {
       // Hide header completely before 100vh
-      header.classList.remove('visible');
+    //   header.classList.remove('visible');
     } else {
       header.classList.add('visible'); // Ensure it's enabled
 
@@ -95,7 +95,6 @@ function enableDarkMode() {
   r.style.setProperty('--primary-font-color', '#f0f0f0');
   r.style.setProperty('--gradient', 'linear-gradient(to bottom right, #1a1a1a 20%, #2e3b4e 60%, #3b4d61 100%)');
 }
-
 function enableLightMode() {
   const r = document.documentElement;
   r.style.setProperty('--cold-blue', '#f0f8ff');
