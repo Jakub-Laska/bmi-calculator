@@ -44,6 +44,37 @@ table {
     gap: 64px;
     z-index: 1;
 }
+#burger-menu {
+    display: flex;
+    flex-direction: column;
+    width: 32px;
+    position: fixed;
+    top: 4rem;
+    right: 2rem;
+    z-index: 99;
+}
+#burger-btn {
+    height: 32px;
+    background: url(img/burger-menu.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#burger-menu-btns {
+    display: none;
+}
+#burger-menu-btns.burger-clicked {
+    display: flex;
+    flex-direction: column;
+}
+#burger-menu-btns .lang-btn {
+        display: flex;
+    flex-direction: column;
+        height: 72px;
+    width: 32px;
+    padding: 6px 12px;
+    font-size: .5vw;
+}
 .bold {
     font-weight: 900;
     font-size: .7vw;
@@ -484,13 +515,13 @@ em {
 #fixed-header.visible {
   transform: translateY(0);
 }
-#dark-mode {
+.dark-mode {
     border-radius: 100%;
     padding: 12px;
     background-color: white;
     margin-right: 16px;
 }
-#lang-btn {
+.lang-btn {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -515,7 +546,7 @@ em {
     order: 2;
 }
 .lang-btn-icon,
-#lang-btn-text {
+.lang-btn-text {
     transition: 0.2s ease-in-out;
 
 }

@@ -1,4 +1,9 @@
-
+// burger menu
+const burgerBtn = document.getElementById('burger-btn');
+burgerBtn.addEventListener('click', ()=>{
+    const burgerMenu = document.getElementById('burger-menu-btns');
+    burgerMenu.classList.toggle('burger-clicked');
+})
 
 
 
@@ -71,21 +76,24 @@ metricBtn.addEventListener('click', () => {
 
 // dark mode
 
-const darkmodeBtn = document.getElementById('dark-mode');
+const darkmodeBtn = document.querySelectorAll('.dark-mode');
 let isDark = false;
 
-darkmodeBtn.addEventListener('click', () => {
-    darkmodeBtn.classList.toggle('light-mode-btn-icon');
+darkmodeBtn.forEach(el => {
+    el.addEventListener('click', ()=>{
+    el.classList.toggle('light-mode-btn-icon');
     const whoGraph = document.getElementById('who-graph');
     whoGraph.classList.toggle('dark-who-graph');
 
-    if (isDark) {
+        if (isDark) {
         enableLightMode();
     } else {
         enableDarkMode();
     }
     isDark = !isDark;
-})
+    })
+});
+
 
 function enableDarkMode() {
     const r = document.documentElement;
@@ -166,39 +174,19 @@ langBtn.addEventListener('click', () => {
     document.documentElement.lang = 'en';  // Set html lang attribute to English
   }
   isPolish = !isPolish;
-  
+
 })
 
 function applyTranslations(translations) {
   document.querySelectorAll('[data-translate-key]').forEach(el => {
     const key = el.getAttribute('data-translate-key');
     if (translations[key]) {
-      el.textContent = translations[key];
+      el.innerHTML = translations[key];
     }
   });
 }
 
-// extract data-translate-key
-// const translationData = {};
 
-// document.querySelectorAll('[data-translate-key]').forEach(el => {
-//   const key = el.getAttribute('data-translate-key');
-//   translationData[key] = el.textContent.trim();
-// });
-// function cleanText(text) {
-//   return text
-//     .replace(/\n/g, ' ')       // replace newlines with spaces
-//     .replace(/\s+/g, ' ')      // replace multiple spaces with one
-//     .trim();
-// }
-
-// const cleanedTranslations = {};
-
-// for (const key in translationData) {
-//   cleanedTranslations[key] = cleanText(translationData[key]);
-// }
-
-// console.log(cleanedTranslations);
 
 const englishTranslations = {
   "1": "FishScale Body Mass Index Calculator",

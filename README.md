@@ -20,3 +20,24 @@ Body Mass Index calculator
 
 
 
+<!-- // extract data-translate-key
+// const translationData = {};
+
+// document.querySelectorAll('[data-translate-key]').forEach(el => {
+//   const key = el.getAttribute('data-translate-key');
+//   translationData[key] = el.textContent.trim();
+// });
+// function cleanText(text) {
+//   return text
+//     .replace(/\n/g, ' ')       // replace newlines with spaces
+//     .replace(/\s+/g, ' ')      // replace multiple spaces with one
+//     .trim();
+// }
+
+// const cleanedTranslations = {};
+
+// for (const key in translationData) {
+//   cleanedTranslations[key] = cleanText(translationData[key]);
+// }
+
+// console.log(cleanedTranslations); -->
