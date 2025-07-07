@@ -156,26 +156,36 @@ underscored.forEach(e => {
 
 // language button
 
-const langBtn = document.getElementById('lang-btn');
+const langBtn = document.querySelectorAll('.lang-btn');
 let isPolish = false;
-langBtn.addEventListener('click', () => {
-    const langIcon = document.querySelector('.lang-btn-icon');
-    langIcon.classList.toggle('lang-clicked');
 
-    const langText = document.getElementById('lang-btn-text');
+langBtn.forEach(el => {
+    el.addEventListener('click', ()=>{
+    const langIcon = document.querySelectorAll('.lang-btn-icon');
+        langIcon.forEach(el => {
+            el.classList.toggle('lang-clicked');
+        });
 
-  if (!isPolish) {
+    const langText = document.querySelectorAll('.lang-btn-text');
+
+      if (!isPolish) {
     applyTranslations(polishTranslations);
-    langText.textContent = 'PL';
+        langText.forEach(el => {
+            el.textContent = 'PL';
+        });
+
     document.documentElement.lang = 'pl';  // Set html lang attribute to Polish
   } else {
     applyTranslations(englishTranslations);
-    langText.textContent = 'EN';
-    document.documentElement.lang = 'en';  // Set html lang attribute to English
+        langText.forEach(el => {
+            el.textContent = 'EN';
+        }); 
+        document.documentElement.lang = 'en';  // Set html lang attribute to English
   }
   isPolish = !isPolish;
 
-})
+    })
+});
 
 function applyTranslations(translations) {
   document.querySelectorAll('[data-translate-key]').forEach(el => {
