@@ -46,6 +46,7 @@ table {
 }
 #burger-menu {
     display: flex;
+    opacity: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -54,6 +55,10 @@ table {
     top: 4rem;
     right: 2rem;
     z-index: 99;
+    transition: .3s;
+}
+#burger-menu.invisible {
+    opacity: 0;
 }
 #burger-menu.clicked {
     background-color: var(--cold-blue);

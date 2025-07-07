@@ -20,20 +20,26 @@ let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
     const scrolledPastVH = window.scrollY > window.innerHeight;
+    const burgerMenu = document.querySelector('#burger-menu');
+
 
     if (!scrolledPastVH) {
         // Hide header completely before 100vh
         header.classList.remove('visible');
+        burgerMenu.classList.remove('invisible');
     } else {
         header.classList.add('visible'); // Ensure it's enabled
+        burgerMenu.classList.add('invisible');
 
         if (window.scrollY > lastScrollY) {
             // Scrolling down
             header.classList.remove('visible');
+            burgerMenu.classList.remove('invisible');
 
         } else {
             // Scrolling up
             header.classList.add('visible');
+            burgerMenu.classList.add('invisible');
         }
     }
 
