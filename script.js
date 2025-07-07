@@ -1,8 +1,11 @@
 // burger menu
 const burgerBtn = document.getElementById('burger-btn');
 burgerBtn.addEventListener('click', ()=>{
-    const burgerMenu = document.getElementById('burger-menu-btns');
-    burgerMenu.classList.toggle('burger-clicked');
+    const burgerMenuBtns = document.getElementById('burger-menu-btns');
+    const burgerMenu = document.querySelector('#burger-menu');
+    burgerMenuBtns.classList.toggle('burger-clicked');
+    burgerBtn.classList.toggle('burger-clicked');
+    burgerMenu.classList.toggle('clicked');
 })
 
 
