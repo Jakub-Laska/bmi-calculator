@@ -109,6 +109,21 @@ table {
     margin: 0;
     transition: opacity 0.5s
 }
+
+
+.info-btn {
+    border-radius: 100%;
+    padding: 12px;
+    background-color: white;
+}
+.info-btn-icon {
+    background-image: url(img/info.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
 .bold {
     font-weight: 900;
     font-size: .7vw;
@@ -606,6 +621,8 @@ em {
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+
 .light-mode-btn-icon {
     background-image: url(img/light-mode.svg);
     background-position: center;
