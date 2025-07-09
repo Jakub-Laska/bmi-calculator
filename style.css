@@ -124,16 +124,28 @@ table {
     background-size: contain;
 }
 .info-modal {
+    width: 100vw;
+    height: 100vh;
     position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+.info-modal-popup {
+    position: absolute;
     width: 500px;
     height: 500px;
-    top: 50vh;
+    padding: 12px;
+    top: 45vh;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--primary-white);
     box-shadow: 2px 2px 10px #00000055;
     z-index: 9999;
-    opacity: 1;
 }
 .info-modal.toggle {
     opacity: 0;
