@@ -133,8 +133,12 @@ table {
     background-color: var(--primary-white);
     box-shadow: 2px 2px 10px #00000055;
     z-index: 9999;
+    opacity: 1;
 }
-
+.info-modal.toggle {
+    opacity: 0;
+    pointer-events: none;
+}
 .bold {
     font-weight: 900;
     font-size: .7vw;

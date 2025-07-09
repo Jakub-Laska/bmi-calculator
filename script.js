@@ -12,23 +12,14 @@ burgerBtn.addEventListener('click', ()=>{
 // info btn
 const infoBtn = document.querySelectorAll('.info-btn');
 let infoToggle = false;
-        const infoModal = document.createElement('div')
 
 infoBtn.forEach(element => {
     element.addEventListener('click', ()=> {
+        const infoModal = document.querySelector('.info-modal')
 
-
-        if (!infoToggle) {
-        infoModal.classList.add('info-modal');
-        document.body.appendChild(infoModal);
-
-        } else {
-        document.body.removeChild(infoModal)
-        }
-        infoToggle = !infoToggle;
-    })
+        infoModal.classList.toggle('toggle')
 });
-
+})
 
 
 //  FIXED HEADER TOGGLE
