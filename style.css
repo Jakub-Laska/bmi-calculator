@@ -274,11 +274,10 @@ table {
     display: block; 
     position: absolute; 
 
-    margin-right: 6px;
+    margin-right: 16px;
     width: 32px;
     height: 32px; 
-    background-image: url(img/gender-btn-selected.png);
-    filter: contrast();
+    background-image: url(img/gender-btn-selected.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
