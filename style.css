@@ -199,7 +199,7 @@ table {
     letter-spacing: 2px;
     font-size: 1rem;
 }
-#bmi-form {
+#bmi-form form{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, 1fr);

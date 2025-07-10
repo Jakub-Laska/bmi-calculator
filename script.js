@@ -116,7 +116,28 @@ genderBtn.forEach(element => {
         })
 });
 
+// clear btn
 
+const clearBtn = document.getElementById('clear-btn');
+
+clearBtn.addEventListener('click', ()=>{
+    const bmiFrom = document.querySelector('#form');
+    bmiFrom.reset();
+    genderBtn.forEach(element => {
+    element.classList.remove('selected');
+    });
+
+        imperialBtn.forEach(element => {
+        element.classList.remove('disabled-btn');
+    });
+    metricBtn.forEach(element => {
+        element.classList.add('disabled-btn');
+    });
+    const metricFormula = document.getElementById('metric-formula');
+    metricFormula.classList.remove('hidden');
+    const imperialFormula = document.getElementById('imperial-formula');
+    imperialFormula.classList.add('hidden');
+})
 
 // dark mode
 

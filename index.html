@@ -94,26 +94,28 @@
 
             <div id="bmi-form" class="animate-on-scroll">
                 
-                    <h3 data-translate-key="3">Enter your Details below:</h3>
-                    <div id="age-metric">
-                        <input id="age-input" type="number" placeholder="age">
-                        <button  class="metric-btn disabled-btn" data-translate-key="4">Metric</button>
-                        <button  class="imperial-btn" data-translate-key="5">Imperial</button>
-                    </div>
-                    <div id="gender-menu">
-                        <h4 data-translate-key="6">Gender:</h4>
-                        <div id="gender-menu-btns">
-                            <div data-translate-key="7"><button id="male-btn" class="gender-btn" value="male"></button>male</div>
-                            <div data-translate-key="8"><button id="female-btn" class="gender-btn" value="female"></button>female</div>
-                            <div data-translate-key="9"><button id="other-btn" class="gender-btn" value="other"></button>other</div>
+                    <form id="form">
+                        <h3 data-translate-key="3">Enter your Details below:</h3>
+                        <div id="age-metric">
+                            <input id="age-input" type="number" placeholder="age">
+                            <button type="button"  class="metric-btn disabled-btn" data-translate-key="4">Metric</button>
+                            <button type="button" class="imperial-btn" data-translate-key="5">Imperial</button>
                         </div>
-                    </div>
-                    <input id="weight-input" type="number" placeholder="weight">
-                    <input id="height-input" type="number" placeholder="height">
-                    <div id="submit-menu">
-                        <button data-translate-key="10">clear</button>
-                        <button data-translate-key="11">calculate</button>
-                    </div>
+                        <div id="gender-menu">
+                            <h4 data-translate-key="6">Gender:</h4>
+                            <div id="gender-menu-btns">
+                                <div data-translate-key="7"><button type="button" id="male-btn" class="gender-btn" value="male"></button>male</div>
+                                <div data-translate-key="8"><button type="button" id="female-btn" class="gender-btn" value="female"></button>female</div>
+                                <div data-translate-key="9"><button type="button" id="other-btn" class="gender-btn" value="other"></button>other</div>
+                            </div>
+                        </div>
+                        <input id="weight-input" type="number" placeholder="weight">
+                        <input id="height-input" type="number" placeholder="height">
+                        <div id="submit-menu">
+                            <button type="button" data-translate-key="10" id="clear-btn">clear</button>
+                            <button type="button" data-translate-key="11">calculate</button>
+                        </div>
+                    </form>
             
             </div>
         </div>
