@@ -120,9 +120,9 @@ genderBtn.forEach(element => {
 
 const clearBtn = document.getElementById('clear-btn');
 
-clearBtn.addEventListener('click', clear);
+clearBtn.addEventListener('click', clearBtnFunction);
 
-function clear() {
+function clearBtnFunction() {
     const bmiFrom = document.querySelector('#form');
     bmiFrom.reset();
     genderBtn.forEach(element => {
@@ -140,6 +140,27 @@ function clear() {
     const imperialFormula = document.getElementById('imperial-formula');
     imperialFormula.classList.add('hidden');
 }
+
+// calculate btn
+
+const calculateBtn = document.getElementById('calculate-btn');
+calculateBtn.addEventListener('click', ()=>{
+
+    const ageInput = document.getElementById('age-input')
+    let ageValue = ageInput.value;
+
+    const weightInput = document.getElementById('weight-input');
+    let weightValue = weightInput.value;
+
+    const heightInput = document.getElementById('height-input');
+    let heightValue = heightInput.value;
+
+    console.log(weightValue / (heightValue ** 2) * 10000);
+
+    clearBtnFunction();
+
+
+})
 
 // dark mode
 
