@@ -120,7 +120,9 @@ genderBtn.forEach(element => {
 
 const clearBtn = document.getElementById('clear-btn');
 
-clearBtn.addEventListener('click', ()=>{
+clearBtn.addEventListener('click', clear);
+
+function clear() {
     const bmiFrom = document.querySelector('#form');
     bmiFrom.reset();
     genderBtn.forEach(element => {
@@ -137,7 +139,7 @@ clearBtn.addEventListener('click', ()=>{
     metricFormula.classList.remove('hidden');
     const imperialFormula = document.getElementById('imperial-formula');
     imperialFormula.classList.add('hidden');
-})
+}
 
 // dark mode
 
