@@ -249,12 +249,50 @@ table {
     align-items: center;
     gap: 8px;
 }
-#gender-menu button {
+.gender-btn {
     height: 16px;
     width: 16px;
     border-radius: 50%;
     margin-left: 16px;
+    position: relative;
+    background-color: var(--primary-white);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-out;
 }
+
+.gender-btn.selected {
+    background-color: var(--primary-blue); 
+    pointer-events: none;
+}
+
+
+.gender-btn.selected::after {
+    content: '';
+    display: block; 
+    position: absolute; 
+
+    margin-right: 6px;
+    width: 32px;
+    height: 32px; 
+    background-image: url(img/gender-btn-selected.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10; 
+
+
+    opacity: .5;
+    transform: scale(0.5); 
+    animation: dolphinPopIn 0.1s ease-out forwards;
+}
+
+@keyframes dolphinPopIn {
+    to { opacity: 1; transform: scale(1); }
+}
+
 #weight-input {
     grid-area: 4 / 1 / 5 / 2;
         height: 32px;

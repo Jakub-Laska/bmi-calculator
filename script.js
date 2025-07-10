@@ -103,6 +103,25 @@ metricBtn.forEach(element => {
 });
 });
 
+// gender input
+const genderBtn = document.querySelectorAll('.gender-btn');
+
+genderBtn.forEach(element => {
+        element.addEventListener('click', (event)=> {
+            genderBtn.forEach(element => {
+                element.style.backgroundColor = 'var(--primary-white)';
+                element.style.pointerEvents = 'auto';
+                element.classList.remove('selected');
+            });
+            event.target.style.backgroundColor = 'var(--primary-blue)';
+            event.target.style.pointerEvents = 'none';
+            event.target.classList.add('selected');
+
+        })
+});
+
+
+
 // dark mode
 
 const darkmodeBtn = document.querySelectorAll('.dark-mode');
