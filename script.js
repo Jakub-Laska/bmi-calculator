@@ -68,29 +68,40 @@ headerLogo.addEventListener('click', () => {
 
 // mbi formula buttons
 
-const imperialBtn = document.getElementById('imperial-btn');
+const imperialBtn = document.querySelectorAll('.imperial-btn');
 
-imperialBtn.addEventListener('click', () => {
+imperialBtn.forEach(element => {
+    element.addEventListener('click', () => {
     const metricFormula = document.getElementById('metric-formula');
     metricFormula.classList.toggle('hidden');
     const imperialFormula = document.getElementById('imperial-formula');
     imperialFormula.classList.toggle('hidden');
-    imperialBtn.classList.toggle('disabled-btn');
-    metricBtn.classList.toggle('disabled-btn');
+    imperialBtn.forEach(element => {
+        element.classList.toggle('disabled-btn');
+    });
+    metricBtn.forEach(element => {
+        element.classList.toggle('disabled-btn');
+    });
+});
+});
 
-})
+const metricBtn = document.querySelectorAll('.metric-btn');
 
-const metricBtn = document.getElementById('metric-btn');
-
-metricBtn.addEventListener('click', () => {
+metricBtn.forEach(element => {
+    element.addEventListener('click', () => {
     const metricFormula = document.getElementById('metric-formula');
     metricFormula.classList.toggle('hidden');
     const imperialFormula = document.getElementById('imperial-formula');
     imperialFormula.classList.toggle('hidden');
-    metricBtn.classList.toggle('disabled-btn');
-    imperialBtn.classList.toggle('disabled-btn');
+    imperialBtn.forEach(element => {
+        element.classList.toggle('disabled-btn');
+    });
+    metricBtn.forEach(element => {
+        element.classList.toggle('disabled-btn');
+    });
 
-})
+});
+});
 
 // dark mode
 

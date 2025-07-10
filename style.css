@@ -199,13 +199,13 @@ table {
     letter-spacing: 2px;
     font-size: 1rem;
 }
-#bmi-form form {
+#bmi-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, 1fr);
     gap: 32px;
 }
-#bmi-form form input {
+#bmi-form input {
     width: 100%;
     height: 32px;
     background-color: var(--cold-blue);
@@ -227,9 +227,7 @@ table {
     width: 100%;
     height: 32px;
 }
-.metric-btn {
-    background-color: var(--cold-blue);
-}
+
 #gender-menu {
     grid-area: 3 / 1 / 4 / -1;
     display: flex;
@@ -277,6 +275,7 @@ table {
 }
 button {
     border: outset 2px var(--cold-blue);
+    background-color: var(--primary-white);
 }
 button:hover {
     background-color: var(--cold-blue);
