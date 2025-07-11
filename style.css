@@ -184,10 +184,11 @@ table {
     font-size: 1vw;
 }
 #bmi-form {
+    width: 24vw;
+    height: 48vh;
     position: absolute;
     top: 4rem;
     right: 12%;
-    padding: 2vw;
     background-color: var(--primary-white);
     box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.473);
     display: flex;
@@ -199,11 +200,12 @@ table {
     letter-spacing: 2px;
     font-size: 1rem;
 }
-#bmi-form form{
+.form{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, 1fr);
     gap: 32px;
+    padding: 2vw;
 }
 #bmi-form input {
     width: 100%;
@@ -318,6 +320,17 @@ button {
 button:hover {
     background-color: var(--cold-blue);
     border: inset 2px var(--cold-blue);
+}
+.bmi-result-window {
+    width: 100%;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+}
+.bmi-result-exit-btn {
+    width: 32px;
+    height: 32px;
 }
 #mid-section {
     display: flex;
@@ -588,9 +601,6 @@ em {
     font-size: 8px;
     vertical-align: super;
 }
-.hidden {
-    display: none;
-}
 .bmi-table-container {
     margin-top: 32px;
 }
@@ -749,4 +759,8 @@ u {
     text-align: justify;
     hyphens: auto;
     margin: 0;
+}
+
+.hidden {
+    display: none;
 }

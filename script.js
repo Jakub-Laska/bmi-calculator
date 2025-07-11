@@ -123,7 +123,7 @@ const clearBtn = document.getElementById('clear-btn');
 clearBtn.addEventListener('click', clearBtnFunction);
 
 function clearBtnFunction() {
-    const bmiFrom = document.querySelector('#form');
+    const bmiFrom = document.querySelector('.form');
     bmiFrom.reset();
     genderBtn.forEach(element => {
     element.classList.remove('selected');
@@ -156,6 +156,11 @@ calculateBtn.addEventListener('click', ()=>{
     let heightValue = heightInput.value;
 
     console.log(weightValue / (heightValue ** 2) * 10000);
+
+    const bmiForm = document.querySelector('.form');
+    bmiForm.classList.toggle('hidden');
+    const bmiResultWindow = document.querySelector('.bmi-result-window');
+    bmiResultWindow.classList.toggle('hidden');
 
     clearBtnFunction();
 
