@@ -13,7 +13,7 @@ Body Mass Index calculator
 13. title icons
 10. readme
 11. cleanup
-
+12. how does age and gender affect the result
 
 
 
