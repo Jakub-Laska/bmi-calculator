@@ -513,10 +513,11 @@ span {
 
 #footer {
     width: 100%;
-    height: 8vh;
     background: var(--gradient);
     box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.233);
     margin-top: 64px;
+    display: flex;
+    justify-content: space-between;
 }
 #bmi-limitations {
     position: relative;
@@ -763,4 +764,13 @@ u {
 
 .hidden {
     display: none;
+}
+#footer-logo {
+    margin: 0;
+}
+#footer-logo:hover {
+    cursor: pointer;
+    opacity: .8;
+    transform: scale(1.1);
+
 }
