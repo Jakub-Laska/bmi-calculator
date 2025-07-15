@@ -11,13 +11,11 @@ Body Mass Index calculator
 8. ice cube icon maybe or dolphin
 9. header icon
 13. title icons
-15. fixed header with go up dark mode etc
-16. burger menu with dark mode and creators
 10. readme
 11. cleanup
+12. how does age and gender affect the result
 
-
-
+13. tough weekend
 
 <!-- // extract data-translate-key
 // const translationData = {};
