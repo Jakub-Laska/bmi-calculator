@@ -57,14 +57,15 @@ window.addEventListener('scroll', () => {
 
 
 // go to the top
-const headerLogo = document.getElementById('fixed-header-logo');
-headerLogo.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+const logo = document.querySelectorAll('.logo');
+logo.forEach(element => {
+    element.addEventListener('click', ()=>{
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    })
 });
-
 
 // mbi formula buttons
 
