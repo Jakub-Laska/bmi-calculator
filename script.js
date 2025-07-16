@@ -28,7 +28,7 @@ const header = document.getElementById('fixed-header');
 let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
-    const scrolledPastVH = window.scrollY > window.innerHeight;
+    const scrolledPastVH = window.scrollY > window.innerHeight * 0.1;
     const burgerMenu = document.querySelector('#burger-menu');
 
 
