@@ -762,6 +762,7 @@ u {
 }
 #footer-logo {
     margin-right: 16px;
+    justify-self: right;
 }
 #footer-logo:hover {
     cursor: pointer;
@@ -772,11 +773,28 @@ u {
 
 #footer {
     width: 100%;
-    padding: 6px;
+    padding: 24px;
     background: var(--gradient);
     box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.233);
     margin-top: 64px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
+    justify-content: space-between;
+}
+#disclaimer {
+    color: var(--primary-font-color);
+    text-align: center;
+    font-size: 6px;
+    justify-self: center;
+    align-self: flex-end;
+    font-weight: 900;
+    opacity: .3;
+}
+#disclaimer span {
+    font-family: var(--primary-font);
+    font-size: 7px;
+    letter-spacing: 0px;
+    text-decoration: underline;
 }
