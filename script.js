@@ -249,7 +249,7 @@ underscored.forEach(e => {
 })
 
 // bubbles overlay
-function generateBubbles(count = 100) {
+function generateBubbles(count = 32) {
   const background = document.querySelector('.bubble-background');
   const fragment = document.createDocumentFragment();
 
@@ -259,7 +259,6 @@ const oceanColors = [
   'rgba(175, 238, 238, OP)',  // pale turquoise (soft aqua)
   'rgba(224, 255, 255, OP)',  // light cyan (very pale aqua)
   'rgba(240, 248, 255, OP)',  // alice blue (very pale blue)
-  'rgba(255, 255, 255, OP)',  // pure white (for highlights)
   'rgba(191, 239, 255, OP)',  // soft baby blue
   'rgba(198, 234, 237, OP)',  // pale teal
 ];
@@ -277,8 +276,8 @@ const oceanColors = [
       height: `${size}px`,
       left: `${Math.random() * 100}vw`,
       top: `${Math.random() * 150}vh`,
-      animationDuration: `${8 + Math.random() * 10}s`,
-      animationDelay: `${Math.random() * 4}s`,
+      animationDuration: `${8 + Math.random() * 16}s`,
+      animationDelay: `${Math.random() * 8}s`,
       opacity: opacity,
       backgroundColor: color,
     borderColor: color,
