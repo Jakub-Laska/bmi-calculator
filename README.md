@@ -5,17 +5,12 @@ Body Mass Index calculator
 
 
 1. style it better less text more graphics
-4. bmi formulas functionality now only fuse it with menu btns
-5. functionality
 6. better menu
-8. ice cube icon maybe or dolphin
-9. header icon
 13. title icons
 10. readme
 11. cleanup
 12. how does age and gender affect the result
 
-13. tough weekend
 
 <!-- // extract data-translate-key
 // const translationData = {};

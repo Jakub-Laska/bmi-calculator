@@ -248,6 +248,60 @@ underscored.forEach(e => {
     });
 })
 
+// bubbles overlay
+function generateBubbles(count = 40) {
+  const background = document.querySelector('.bubble-background');
+  const fragment = document.createDocumentFragment();
+
+const oceanColors = [
+  'rgba(173, 216, 230, OP)',  // light blue (pastel sky blue)
+  'rgba(176, 224, 230, OP)',  // powder blue (soft pastel blue)
+  'rgba(175, 238, 238, OP)',  // pale turquoise (soft aqua)
+  'rgba(224, 255, 255, OP)',  // light cyan (very pale aqua)
+  'rgba(240, 248, 255, OP)',  // alice blue (very pale blue)
+  'rgba(255, 255, 255, OP)',  // pure white (for highlights)
+  'rgba(191, 239, 255, OP)',  // soft baby blue
+  'rgba(198, 234, 237, OP)',  // pale teal
+];
+
+  for (let i = 0; i < count; i++) {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+
+    const size = Math.random() * 50 + 10;
+    const opacity = Math.random() * 0.6 + 0.3; // 0.3 to 0.9
+    const color = oceanColors[Math.floor(Math.random() * oceanColors.length)].replace('OP', opacity.toFixed(2));
+
+    Object.assign(bubble.style, {
+      width: `${size}px`,
+      height: `${size}px`,
+      left: `${Math.random() * 100}vw`,
+      top: `${Math.random() * 150}vh`,
+      animationDuration: `${8 + Math.random() * 10}s`,
+      animationDelay: `${Math.random() * 4}s`,
+      opacity: opacity,
+      backgroundColor: color,
+    borderColor: color,
+      boxShadow: `
+        inset 0 4px 10px rgba(255 255 255 / 0.8),
+        0 0 10px ${color}
+      `,
+    });
+
+    fragment.appendChild(bubble);
+  }
+
+  background.appendChild(fragment);
+}
+
+generateBubbles();
+
+
+
+
+
+
+
 // language button
 
 const langBtn = document.querySelectorAll('.lang-btn');
