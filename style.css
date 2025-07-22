@@ -175,6 +175,20 @@ table {
     text-align: justify;
     margin-top: 4rem;
     margin-left: 16%;
+    position: relative;
+}
+#top-main-content::before {
+    content: '';
+    background-image: url(img/wave1.svg);
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .4;
+    height: 100%;
+    width: 100%;
 }
 #top-main h1 {
     font-size: 2.5vw;
