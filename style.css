@@ -785,7 +785,7 @@ u {
 #footer::before,
 #fixed-header::before {
     content: '';
-    background-image: url(img/dolphin-footer.png);
+    background-image: url(img/dolphin-logo.png);
     position: absolute;
     top: 0;
     left: 0;
@@ -803,6 +803,22 @@ u {
     font-weight: 900;
     opacity: .3;
     justify-self: right;
+    position: relative;
+}
+#footer::after {
+    content: '';
+    background-image: url(img/dolphin-disclaimer.png);
+    position: absolute;
+    top: -80%;
+    right: 5%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    width: 360px;
+    height: 124px;
+    z-index: -5;
+    transform: scaleX(-1);
 }
 #disclaimer span {
     font-size: 8px;
