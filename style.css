@@ -761,8 +761,7 @@ u {
     display: none;
 }
 #footer-logo {
-    margin-right: 16px;
-    justify-self: right;
+    justify-self: left;
 }
 #footer-logo:hover {
     cursor: pointer;
@@ -780,21 +779,55 @@ u {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    justify-content: space-between;
+    color: var(--primary-font-color);
+    position: relative;
+}
+#footer::before {
+    content: '';
+    background-image: url(img/dolphin-footer.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 99;
+    opacity: .5;
+    width: 124px;
+    height: 100%;
 }
 #disclaimer {
-    color: var(--primary-font-color);
-    text-align: center;
-    font-size: 6px;
-    justify-self: center;
-    align-self: flex-end;
+    text-align: left;
+    font-size: 8px;
     font-weight: 900;
     opacity: .3;
+    justify-self: right;
 }
 #disclaimer span {
-    font-family: var(--primary-font);
-    font-size: 7px;
+    font-size: 8px;
     letter-spacing: 0px;
     text-decoration: underline;
+}
+#footer div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+#media {
+    display: flex;
+
+}
+.mediaIcon {
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  transition: 0.5s;
+  box-shadow: 0 0 20px var(--primary-white);
+}
+
+.mediaIcon:hover {
+  transform: rotate(360deg) scale(1.2) translate(4px, 4px);
+  box-shadow: 0 0 20px var(--primary-blue);
+  cursor: pointer;
 }
