@@ -614,6 +614,20 @@ em {
   align-items: center;
   justify-content: space-between;
 }
+#fixed-header::before {
+    content: '';
+    background-image: url(img/dolphin-footer.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 99;
+    opacity: .5;
+    width: 124px;
+    height: 100%;
+}
 #fixed-header-btns {
     display: flex;
     align-items: center;
