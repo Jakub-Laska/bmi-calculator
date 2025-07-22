@@ -165,7 +165,8 @@ table {
     border-bottom-right-radius: 4rem;
     height: 550px;
     background: var(--gradient);
-    
+    overflow: hidden;
+    position: relative;
 }
 #top-main-content {
     display: flex;
@@ -178,7 +179,7 @@ table {
     margin-left: 16%;
     position: relative;
 }
-#top-main-content::before {
+#top-main::before {
     content: '';
     background-image: url(img/wave1.svg);
     background-size: contain;
@@ -190,6 +191,7 @@ table {
     opacity: .1;
     height: 100%;
     width: 100%;
+    transform: scale(1.1);
 }
 #top-main h1 {
     font-size: 2.5vw;

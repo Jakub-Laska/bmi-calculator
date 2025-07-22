@@ -249,7 +249,7 @@ underscored.forEach(e => {
 })
 
 // bubbles overlay
-function generateBubbles(count = 40) {
+function generateBubbles(count = 100) {
   const background = document.querySelector('.bubble-background');
   const fragment = document.createDocumentFragment();
 
@@ -296,7 +296,12 @@ const oceanColors = [
 
 generateBubbles();
 
+// title icons
+const titles = document.querySelectorAll('strong');
 
+titles.forEach(element => {
+    element.classList.add
+});
 
 
 
