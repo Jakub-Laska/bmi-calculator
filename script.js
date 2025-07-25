@@ -249,48 +249,32 @@ underscored.forEach(e => {
 })
 
 // bubbles overlay
-function generateBubbles(count = 32) {
-  const background = document.querySelector('.bubble-background');
+function generateBubbles(count = 16) {
+  const background = document.querySelectorAll('.bubble-background');
   const fragment = document.createDocumentFragment();
-
-const oceanColors = [
-  'rgba(173, 216, 230, OP)',  // light blue (pastel sky blue)
-  'rgba(176, 224, 230, OP)',  // powder blue (soft pastel blue)
-  'rgba(175, 238, 238, OP)',  // pale turquoise (soft aqua)
-  'rgba(224, 255, 255, OP)',  // light cyan (very pale aqua)
-  'rgba(240, 248, 255, OP)',  // alice blue (very pale blue)
-  'rgba(191, 239, 255, OP)',  // soft baby blue
-  'rgba(198, 234, 237, OP)',  // pale teal
-];
 
   for (let i = 0; i < count; i++) {
     const bubble = document.createElement('div');
     bubble.classList.add('bubble');
 
     const size = Math.random() * 50 + 10;
-    const opacity = Math.random() * 0.6 + 0.3; // 0.3 to 0.9
-    const color = oceanColors[Math.floor(Math.random() * oceanColors.length)].replace('OP', opacity.toFixed(2));
+    const opacity = Math.random() * 0.4 + 0.1;
 
     Object.assign(bubble.style, {
       width: `${size}px`,
       height: `${size}px`,
       left: `${Math.random() * 100}vw`,
-      top: `${Math.random() * 150}vh`,
-      animationDuration: `${8 + Math.random() * 16}s`,
-      animationDelay: `${Math.random() * 8}s`,
+      animationDuration: `${4 + Math.random() * 5}s`,
+      animationDelay: `${Math.random() * 3}s`,
       opacity: opacity,
-      backgroundColor: color,
-    borderColor: color,
-      boxShadow: `
-        inset 0 4px 10px rgba(255 255 255 / 0.8),
-        0 0 10px ${color}
-      `,
+      boxShadow: `inset 0 4px 10px rgba(255 255 255 / 0.8)`,
     });
 
     fragment.appendChild(bubble);
   }
-
-  background.appendChild(fragment);
+  background.forEach(element => {
+    element.appendChild(fragment);
+  });
 }
 
 generateBubbles();
@@ -298,9 +282,41 @@ generateBubbles();
 // title icons
 const titles = document.querySelectorAll('strong');
 
-titles.forEach(element => {
-    element.classList.add
+titles.forEach((element, index) => {
+  // Create wrapper span
+  const wrapper = document.createElement('span');
+  wrapper.style.position = 'relative';
+  wrapper.style.display = 'inline-block';
+
+  // Insert wrapper before the strong element and move the strong inside
+  element.parentNode.insertBefore(wrapper, element);
+  wrapper.appendChild(element);
+
+  // Give the strong element padding-left so text doesn't overlap the icon
+  element.style.paddingLeft = '24px';
+  element.style.display = 'inline-block'; // ensures padding applies correctly
+
+  // Create icon
+  const icon = document.createElement('img');
+  icon.src = `img/icons/img${index + 1}.png`;
+  icon.alt = `Icon ${index + 1}`;
+
+  // Style icon to be absolutely positioned
+  Object.assign(icon.style, {
+    width: '16px',
+    height: '16px',
+    position: 'absolute',
+    left: '0',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    pointerEvents: 'none',
+  });
+
+  // Append icon to wrapper
+  wrapper.appendChild(icon);
 });
+
+
 
 
 

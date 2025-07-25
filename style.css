@@ -7,6 +7,8 @@
     --primary-font-color: #000;
     --gradient: linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%);
 
+  --dark-blue: #a8c9ff;       
+  --darker-blue: #6c9effcc;   
 
     --transition-speed: 0s;
 }
@@ -860,10 +862,9 @@ u {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   pointer-events: none;
-  background-color: var(--primary-white);
   z-index: -1;
   will-change: transform, opacity;
 }
@@ -875,25 +876,26 @@ u {
   animation-iteration-count: infinite;
   will-change: transform, opacity;
 
-    background: radial-gradient(
+  background: radial-gradient(
     circle at 30% 30%,
-    rgba(255 255 255 / 0.8),
-    rgba(255 255 255 / 0) 70%
+    var(--dark-blue),
+    rgba(255, 255, 255, 0) 70%
   );
-
+  backdrop-filter: blur(4px);
 }
+
 
 @keyframes riseScroll {
   0% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
+    transform: translate(0, 5vh) scale(1) rotate(0deg);
     opacity: 0;
   }
   50% {
-    transform: translate(-10px, -50vh) scale(0.8) rotate(180deg);
-    opacity: 0.7;
+    transform: translate(-10px, 0vh) scale(0.8) rotate(180deg);
+    opacity: 0.5;
   }
   100% {
-    transform: translate(10px, -100vh) scale(0.5) rotate(360deg);
+    transform: translate(10px, -5vh) scale(0.3) rotate(360deg);
     opacity: 0;
   }
 }
