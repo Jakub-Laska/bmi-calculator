@@ -377,6 +377,7 @@ button:hover {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     box-shadow: -4px -4px 20px var(--primary-blue);
+    position: relative;
 }
 #mid-right {
     display: flex;
@@ -617,10 +618,10 @@ em {
   padding: 24px;
   transform: translateY(-100%);
   transition: transform 0.3s ease;
-  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 1;
 }
 #fixed-header-btns {
     display: flex;
@@ -789,7 +790,9 @@ u {
     grid-template-columns: repeat(3, 1fr);
     color: var(--primary-font-color);
     position: relative;
+
 }
+
 #footer::before,
 #fixed-header::before {
     content: '';
@@ -858,14 +861,13 @@ u {
 }
 
 .bubble-background {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
   pointer-events: none;
-  z-index: -1;
   will-change: transform, opacity;
 }
 
@@ -887,15 +889,15 @@ u {
 
 @keyframes riseScroll {
   0% {
-    transform: translate(0, 5vh) scale(1) rotate(0deg);
+    transform: translate(0, 0) scale(1) rotate(0deg);
     opacity: 0;
   }
   50% {
-    transform: translate(-10px, 0vh) scale(0.8) rotate(180deg);
+    transform: translate(-5px, -5vh) scale(0.8) rotate(180deg);
     opacity: 0.5;
   }
   100% {
-    transform: translate(10px, -5vh) scale(0.3) rotate(360deg);
+    transform: translate(5px, -10vh) scale(0.3) rotate(360deg);
     opacity: 0;
   }
 }

@@ -250,34 +250,44 @@ underscored.forEach(e => {
 
 // bubbles overlay
 function generateBubbles(count = 16) {
-  const background = document.querySelectorAll('.bubble-background');
-  const fragment = document.createDocumentFragment();
+  const backgrounds = document.querySelectorAll('.bubble-background');
 
-  for (let i = 0; i < count; i++) {
-    const bubble = document.createElement('div');
-    bubble.classList.add('bubble');
+  backgrounds.forEach(background => {
+    const fragment = document.createDocumentFragment();
+    const bgRect = background.getBoundingClientRect();
 
-    const size = Math.random() * 50 + 10;
-    const opacity = Math.random() * 0.4 + 0.1;
+    for (let i = 0; i < count; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
 
-    Object.assign(bubble.style, {
-      width: `${size}px`,
-      height: `${size}px`,
-      left: `${Math.random() * 100}vw`,
-      animationDuration: `${4 + Math.random() * 5}s`,
-      animationDelay: `${Math.random() * 3}s`,
-      opacity: opacity,
-      boxShadow: `inset 0 4px 10px rgba(255 255 255 / 0.8)`,
-    });
+      const size = Math.random() * 50 + 10;
+      const opacity = Math.random() * 0.4 + 0.1;
 
-    fragment.appendChild(bubble);
-  }
-  background.forEach(element => {
-    element.appendChild(fragment);
+      // Position randomly inside parent (using % for left and top)
+      const leftPercent = Math.random() * 100;
+      const topPercent = Math.random() * 100;
+
+      Object.assign(bubble.style, {
+        width: `${size}px`,
+        height: `${size}px`,
+        left: `${leftPercent}%`,
+        top: `${topPercent}%`,
+        animationDuration: `${4 + Math.random() * 5}s`,
+        animationDelay: `${Math.random() * 3}s`,
+        opacity: opacity,
+        boxShadow: `inset 0 4px 10px rgba(255 255 255 / 0.8)`,
+      });
+
+      fragment.appendChild(bubble);
+    }
+
+    background.appendChild(fragment);
   });
 }
 
 generateBubbles();
+
+
 
 // title icons
 const titles = document.querySelectorAll('strong');
