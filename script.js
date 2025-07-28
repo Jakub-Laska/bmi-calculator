@@ -198,6 +198,8 @@ function enableDarkMode() {
     r.style.setProperty('--primary-blue', '#2e3b4e');
     r.style.setProperty('--primary-white', '#1a1a1a');
     r.style.setProperty('--primary-font-color', '#f0f0f0');
+    r.style.setProperty('--btn-blue', '#2e3b4e');
+    r.style.setProperty('--btn-blue-hover', '#41536e');
     r.style.setProperty('--gradient', 'linear-gradient(to bottom right, #1a1a1a 20%, #2e3b4e 60%, #3b4d61 100%)');
 }
 function enableLightMode() {
@@ -206,6 +208,8 @@ function enableLightMode() {
     r.style.setProperty('--primary-blue', '#d0e9ff9a');
     r.style.setProperty('--primary-white', '#fff');
     r.style.setProperty('--primary-font-color', '#000');
+    r.style.setProperty('--btn-blue', '#f0f8ff');
+    r.style.setProperty('--btn-blue-hover', '#d4e7f8');
     r.style.setProperty('--gradient', 'linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%)');
 }
 // text animation on sroll

@@ -7,12 +7,12 @@
     --primary-font-color: #000;
     --gradient: linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%);
 
-  --dark-blue: #a8c9ff;       
-  --darker-blue: #6c9effcc;   
-
+    --dark-blue: #a8c9ff;       
+    --darker-blue: #6c9effcc;   
+    --btn-blue: #2e3b4e;
+    --btn-blue-hover: #41536e;
     --transition-speed: 0s;
 }
-
 * {
   transition: background-color var(--transition-speed),
               color var(--transition-speed),
@@ -25,9 +25,7 @@ body {
   position: relative;
     z-index: -1;
     background-color: var(--primary-white);
-
 }
-
 h1, h2, h3, h4 {
   font-family: var(--primary-font), sans-serif;
         font-weight: 900;
@@ -66,7 +64,7 @@ table {
     opacity: 0;
 }
 #burger-menu.clicked {
-    background-color: var(--cold-blue);
+    background-color: var(--btn-blue-hover);
     border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
 }
@@ -114,8 +112,6 @@ table {
     margin: 0;
     transition: opacity 0.5s
 }
-
-
 .info-btn {
     border-radius: 100%;
     padding: 12px;
@@ -283,18 +279,15 @@ table {
     justify-content: center;
     transition: background-color 0.3s ease-out;
 }
-
 .gender-btn.selected {
     background-color: none; 
     border: none;
     pointer-events: none;
 }
-
 .gender-btn.selected::after {
     content: '';
     display: block; 
     position: absolute; 
-
     margin-right: 16px;
     width: 32px;
     height: 32px; 
@@ -302,17 +295,13 @@ table {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-
-
     opacity: .5;
     transform: scale(0.5); 
     animation: dolphinPopIn 0.1s ease-out forwards;
 }
-
 @keyframes dolphinPopIn {
     to { opacity: 1; transform: scale(1); }
 }
-
 #weight-input {
     grid-area: 4 / 1 / 5 / 2;
         height: 32px;
@@ -500,20 +489,16 @@ td {
     margin-bottom: 15px;
     color: #333;
 }
-
 .age-bmi-recommendations-simple ul {
     list-style: disc;
     padding-left: 25px;
 }
-
 .age-bmi-recommendations-simple li {
     margin-bottom: 8px;
 }
-
 #bmi-limitations {
     z-index: -1;
 }
-
 .blue {
     background-color: var(--primary-blue);
     width: 100%;
@@ -611,14 +596,15 @@ em {
     display: flex;
     align-items: center;
     font-size: .5vw;
+    z-index: 1;
 }
 #fixed-header-btns button,
 #burger-menu button {
-    background-color: var(--primary-blue);
+    background-color: var(--btn-blue);
 }
 #fixed-header-btns button:hover,
 #burger-menu button:hover {
-    background-color: var(--dark-blue);
+    background-color: var(--btn-blue-hover);
 }
 #fixed-header span,
 #footer-logo {
@@ -744,13 +730,11 @@ u {
     font-weight: 900;
     word-break: break-word;
 }
-
 .popup-info u {
     text-align: justify;
     hyphens: auto;
     margin: 0;
 }
-
 .hidden {
     display: none;
 }
@@ -763,7 +747,6 @@ u {
     transform: scale(1.1);
 
 }
-
 #footer {
     width: 100%;
     padding: 24px;
@@ -777,7 +760,6 @@ u {
     position: relative;
 
 }
-
 #footer::before,
 #fixed-header::before {
     content: '';
@@ -838,13 +820,11 @@ u {
   transition: 0.5s;
   box-shadow: 0 0 20px var(--primary-white);
 }
-
 .mediaIcon:hover {
   transform: rotate(360deg) scale(1.2) translate(4px, 4px);
   box-shadow: 0 0 20px var(--primary-blue);
   cursor: pointer;
 }
-
 .bubble-background {
   position: absolute;
   top: 0;
@@ -855,7 +835,6 @@ u {
   pointer-events: none;
   will-change: transform, opacity;
 }
-
 .bubble {
   position: absolute;
   border-radius: 50%;
@@ -870,8 +849,6 @@ u {
   );
   backdrop-filter: blur(4px);
 }
-
-
 @keyframes riseScroll {
   0% {
     transform: translate(0, 0) scale(1) rotate(0deg);
