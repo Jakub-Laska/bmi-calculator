@@ -866,7 +866,7 @@ u {
     width: 64px;
     height: 64px;
     position: absolute;
-    left: -16%;
+    left: -6vw;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;

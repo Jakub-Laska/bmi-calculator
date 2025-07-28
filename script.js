@@ -303,7 +303,6 @@ titles.forEach((element, index) => {
 
   const icon = document.createElement('img');
   icon.src = `img/icons/img${index + 1}.png`;
-  icon.alt = `Icon ${index + 1}`;
 
   icon.classList.add('strong-icons');
 
