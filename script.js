@@ -171,11 +171,14 @@ calculateBtn.addEventListener('click', ()=>{
 // dark mode
 
 const darkmodeBtn = document.querySelectorAll('.dark-mode');
-let isDark = false;
+enableDarkMode();
+let isDark = true;
 
 darkmodeBtn.forEach(el => {
     el.addEventListener('click', ()=>{
-    el.classList.toggle('light-mode-btn-icon');
+        darkmodeBtn.forEach(el => {
+            el.classList.toggle('dark-mode-btn-icon')
+        });
     const whoGraph = document.getElementById('who-graph');
     whoGraph.classList.toggle('dark-who-graph');
 
@@ -293,37 +296,14 @@ generateBubbles();
 const titles = document.querySelectorAll('strong');
 
 titles.forEach((element, index) => {
-  // Create wrapper span
-  const wrapper = document.createElement('span');
-  wrapper.style.position = 'relative';
-  wrapper.style.display = 'inline-block';
 
-  // Insert wrapper before the strong element and move the strong inside
-  element.parentNode.insertBefore(wrapper, element);
-  wrapper.appendChild(element);
-
-  // Give the strong element padding-left so text doesn't overlap the icon
-  element.style.paddingLeft = '24px';
-  element.style.display = 'inline-block'; // ensures padding applies correctly
-
-  // Create icon
   const icon = document.createElement('img');
   icon.src = `img/icons/img${index + 1}.png`;
   icon.alt = `Icon ${index + 1}`;
 
-  // Style icon to be absolutely positioned
-  Object.assign(icon.style, {
-    width: '16px',
-    height: '16px',
-    position: 'absolute',
-    left: '0',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    pointerEvents: 'none',
-  });
+  icon.classList.add('strong-icons');
 
-  // Append icon to wrapper
-  wrapper.appendChild(icon);
+  element.appendChild(icon);
 });
 
 

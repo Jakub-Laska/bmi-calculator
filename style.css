@@ -389,7 +389,6 @@ button:hover {
     grid-area: 1 / 5 / 2 / 6;
     font-size: .8vw;
 }
-
 #bot-section {
     margin-top: 8rem;
     display: grid;
@@ -436,6 +435,7 @@ strong {
     align-self: flex-start;
     margin-bottom: 16px;
     font-family: var(--primary-font), sans-serif;
+    position: relative;
 }
 span {
     font-size: 1.3vw;
@@ -444,7 +444,6 @@ span {
     font-family: var(--secondary-font), sans-serif;
     margin-top: 32px;
 }
-
 .age-bmi-recommendations-simple {
     display: flex;
     flex-direction: column;
@@ -454,8 +453,6 @@ span {
     display: flex;
     flex-direction: column;
 }
-
-
 .bmi-table {
     font-size: .8vw;
     display: flex;
@@ -469,26 +466,23 @@ span {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 .bmi-table-simple {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 30px;
 }
-
 .bmi-table-simple th,
 .bmi-table-simple td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
 }
-
 .bmi-table-simple th {
     background-color: #e2e6ea;
     font-weight: bold;
     color: #555;
 }
- td {
+td {
     background-color: var(--cold-blue);
 }
 
@@ -500,7 +494,6 @@ span {
 .bmi-table-simple .category-obese-1 td:first-child { background-color: #f8d7da; color: black;}
 .bmi-table-simple .category-obese-2 td:first-child { background-color: #dc3545; color: white;}
 .bmi-table-simple .category-obese-3 td:first-child { background-color: #a71d2a; color: white;}
-
 
 .age-bmi-recommendations-simple h2 {
     text-align: center;
@@ -526,8 +519,6 @@ span {
     width: 100%;
     border-top-left-radius: 100%;
 }
-
-
 
 /* maybe some text animation */
 /* h1, h2 {
@@ -568,19 +559,15 @@ span {
     font-size: 24px;
     font-weight: 900;
 }
-
-
-
-  .fraction {
+.fraction {
     display: inline-block;
     vertical-align: middle;
     font-family: var(--secondary-font);
     font-family: var(--primary-font);
     font-family: var(--secondary-font);
 
-  }
-
-  .fraction > span {
+}
+.fraction > span {
     display: block;
     padding: 0 6px;
     font-family: var(--primary-font);
@@ -588,18 +575,15 @@ span {
 
     font-size: 24px;
 
-  }
-
-  .fraction .top {
+}
+.fraction .top {
     border-bottom: 2px solid var(--primary-font-color);
-  }
-
-  .power {
+}
+.power {
     font-size: 0.75em;
     vertical-align: super;
     text-shadow: none;
-  }
-
+}
 em {
     font-size: 8px;
     vertical-align: super;
@@ -628,6 +612,14 @@ em {
     align-items: center;
     font-size: .5vw;
 }
+#fixed-header-btns button,
+#burger-menu button {
+    background-color: var(--primary-blue);
+}
+#fixed-header-btns button:hover,
+#burger-menu button:hover {
+    background-color: var(--dark-blue);
+}
 #fixed-header span,
 #footer-logo {
     margin: 0;
@@ -646,7 +638,7 @@ em {
 .dark-mode {
     border-radius: 100%;
     padding: 12px;
-    background-color: white;
+    background-color: var(--primary-blue);
     margin-right: 16px;
 }
 .lang-btn {
@@ -694,20 +686,17 @@ em {
     cursor: not-allowed;
 
 }
-.dark-mode-btn-icon {
-    background-image: url(img/dark-mode.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-
 .light-mode-btn-icon {
     background-image: url(img/light-mode.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-
+}
+.dark-mode-btn-icon {
+    background-image: url(img/dark-mode.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 #who-graph {
     width: 100%;
@@ -723,25 +712,21 @@ em {
     background: url(img/bmi-chart-dark.png);
 
 }
-
 .animate-on-scroll {
   opacity: .1;
   transform: translateY(50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
 .animate-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 u {
     cursor: help;
     position: relative;
     display: inline-block;
     background-color: var(--cold-blue);
 }
-
 .popup-info {
     position: absolute;
     top: 32px;
@@ -901,4 +886,12 @@ u {
     opacity: 0;
   }
 }
-
+.strong-icons{
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    left: -16%;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
