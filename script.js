@@ -180,7 +180,7 @@ darkmodeBtn.forEach(el => {
             el.classList.toggle('dark-mode-btn-icon')
         });
     const whoGraph = document.getElementById('who-graph');
-    whoGraph.classList.toggle('dark-who-graph');
+    whoGraph.classList.toggle('light-who-graph');
 
         if (isDark) {
         enableLightMode();

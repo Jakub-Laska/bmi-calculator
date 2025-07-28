@@ -691,12 +691,11 @@ em {
     background-position: center;
     background-size: contain;
 }
-.light-who-graph {
-    background: url(img/bmi-chart.png);
-}
 .dark-who-graph {
     background: url(img/bmi-chart-dark.png);
-
+}
+.light-who-graph {
+    background: url(img/bmi-chart.png);
 }
 .animate-on-scroll {
   opacity: .1;
