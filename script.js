@@ -224,7 +224,7 @@ const observer = new IntersectionObserver(entries => {
     .forEach(entry => {
       entry.target.style.transitionDelay = `${delay}s`;
       entry.target.classList.add('visible');
-      delay += 0.1; // Increase delay for each one
+      delay += 0.1;
     });
 }, {
   threshold: 0.2
@@ -311,19 +311,18 @@ titles.forEach((element, index) => {
 
 //  Animate fish separately on scroll
 const fishIcons = document.querySelectorAll('.strong-icons');
-
 const fishObserver = new IntersectionObserver(entries => {
-  let delay = .2;
+  let fishDelay = .3;
 
   entries
-    .filter(entry => entry.isIntersecting && !entry.target.classList.contains('fish-visible'))
-    .forEach(entry => {
-      entry.target.style.transitionDelay = `${delay}s`;
+  .filter(entry => entry.isIntersecting && !entry.target.classList.contains('fish-visible'))
+  .forEach(entry => {
+      entry.target.style.animationDelay = `${fishDelay}s`;
       entry.target.classList.add('fish-visible');
-      delay += 0.1; // Increase delay for each one
+      fishDelay += .5;
     });
 }, {
-  threshold: 0.6
+  threshold: 0.2
 });
 
 fishIcons.forEach(icon => fishObserver.observe(icon));
