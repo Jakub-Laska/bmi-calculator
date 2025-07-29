@@ -212,9 +212,8 @@ function enableLightMode() {
     r.style.setProperty('--btn-blue-hover', '#d4e7f8');
     r.style.setProperty('--gradient', 'linear-gradient(to bottom right, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%)');
 }
-// text animation on sroll
 
-// Select all text elements you want to animate
+// text animation on sroll
 const textElements = document.querySelectorAll('.animate-on-scroll');
 
 const observer = new IntersectionObserver(entries => {
@@ -232,8 +231,6 @@ const observer = new IntersectionObserver(entries => {
 });
 
 textElements.forEach(el => observer.observe(el));
-
-
 
 // more info hover popup
 const underscored = document.querySelectorAll('u');
@@ -296,10 +293,7 @@ function generateBubbles(count = 16) {
     background.appendChild(fragment);
   });
 }
-
 generateBubbles();
-
-
 
 // title icons
 const titles = document.querySelectorAll('strong');
@@ -308,16 +302,31 @@ titles.forEach((element, index) => {
 
   const icon = document.createElement('img');
   icon.src = `img/icons/img${index + 1}.png`;
+    icon.alt = 'Fish icon';
 
   icon.classList.add('strong-icons');
 
   element.appendChild(icon);
 });
 
+//  Animate fish separately on scroll
+const fishIcons = document.querySelectorAll('.strong-icons');
 
+const fishObserver = new IntersectionObserver(entries => {
+  let delay = .2;
 
+  entries
+    .filter(entry => entry.isIntersecting && !entry.target.classList.contains('fish-visible'))
+    .forEach(entry => {
+      entry.target.style.transitionDelay = `${delay}s`;
+      entry.target.classList.add('fish-visible');
+      delay += 0.1; // Increase delay for each one
+    });
+}, {
+  threshold: 0.6
+});
 
-
+fishIcons.forEach(icon => fishObserver.observe(icon));
 
 
 // language button
