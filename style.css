@@ -863,11 +863,11 @@ u {
   }
 }
 .strong-icons{
-    width: 64px;
-    height: 64px;
+    max-width: 64px;
+    max-height: 64px;
     position: absolute;
-    left: -6vw;
+    left: -4vw;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scaleX(-1);
     pointer-events: none;
 }
