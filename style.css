@@ -698,13 +698,16 @@ em {
     background: url(img/bmi-chart.png);
 }
 .animate-on-scroll {
-  opacity: .1;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(60px) scale(0.95) rotateX(10deg);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: top center;
 }
 .animate-on-scroll.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1) rotateX(0deg);
 }
 u {
     cursor: help;
