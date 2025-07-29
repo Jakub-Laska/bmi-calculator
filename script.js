@@ -218,16 +218,21 @@ function enableLightMode() {
 const textElements = document.querySelectorAll('.animate-on-scroll');
 
 const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible'); // Add class when in viewport
-        }
+  let delay = 0;
+
+  entries
+    .filter(entry => entry.isIntersecting && !entry.target.classList.contains('visible'))
+    .forEach(entry => {
+      entry.target.style.transitionDelay = `${delay}s`;
+      entry.target.classList.add('visible');
+      delay += 0.1; // Increase delay for each one
     });
 }, {
-    threshold: 0.1 // Trigger when 10% of element is visible
+  threshold: 0.2
 });
 
 textElements.forEach(el => observer.observe(el));
+
 
 
 // more info hover popup
