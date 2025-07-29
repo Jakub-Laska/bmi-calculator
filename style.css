@@ -766,7 +766,7 @@ u {
     grid-template-columns: repeat(3, 1fr);
     color: var(--primary-font-color);
     position: relative;
-
+    align-items: center;
 }
 #footer::before,
 #fixed-header::before {
@@ -786,8 +786,7 @@ u {
 #disclaimer {
     text-align: left;
     font-size: 8px;
-    font-weight: 900;
-    opacity: .3;
+    opacity: .6;
     justify-self: right;
     position: relative;
 }
@@ -807,9 +806,12 @@ u {
     transform: scaleX(-1);
 }
 #disclaimer span {
+    font-family: var(--primary-font);
     font-size: 8px;
     letter-spacing: 0px;
     text-decoration: underline;
+    color: #EF476F;
+    font-weight: 900;
 }
 #footer div {
     display: flex;
@@ -819,7 +821,7 @@ u {
 }
 #media {
     display: flex;
-
+    z-index: 1;
 }
 .mediaIcon {
   max-width: 40px;
