@@ -465,7 +465,16 @@ const englishTranslations = {
   "90": "US Customary Units (pounds and inches):",
   "91": "mass (lbs)",
   "92": "height² (in)",
-  "93": "*Example: For a 160-pound individual who is 5'10\" (70 inches tall):"
+  "93": "*Example: For a 160-pound individual who is 5'10\" (70 inches tall):",
+    '94': "Recommended BMI by Age",
+  '95': `
+    <li>19 - 24 years: 19 - 24</li>
+    <li>25 - 34 years: 20 - 25</li>
+    <li>35 - 44 years: 21 - 26</li>
+    <li>45 - 54 years: 22 - 27</li>
+    <li>55 - 64 years: 23 - 28</li>
+    <li>Over 64 years: 24 - 29</li>
+  `
 };
 
 const polishTranslations = {
@@ -561,5 +570,14 @@ const polishTranslations = {
   "90": "Jednostki amerykańskie (funty i cale):",
   "91": "masa (lbs)",
   "92": "wzrost² (in)",
-  "93": "*Przykład: dla osoby ważącej 160 funtów i mającej 5'10\" (70 cali):"
+  "93": "*Przykład: dla osoby ważącej 160 funtów i mającej 5'10\" (70 cali):",
+    '94': "Zalecane BMI według wieku",
+  '95': `
+    <li>19–24 lata: 19–24</li>
+    <li>25–34 lata: 20–25</li>
+    <li>35–44 lata: 21–26</li>
+    <li>45–54 lata: 22–27</li>
+    <li>55–64 lata: 23–28</li>
+    <li>Powyżej 64 lat: 24–29</li>
+  `
 }
