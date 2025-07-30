@@ -107,10 +107,10 @@
                         </div>
                         <div id="gender-menu">
                             <h4 data-translate-key="6">Gender:</h4>
-                            <div id="gender-menu-btns">
-                                <div data-translate-key="7"><button type="button" id="male-btn" class="gender-btn" value="male"></button>male</div>
-                                <div data-translate-key="8"><button type="button" id="female-btn" class="gender-btn" value="female"></button>female</div>
-                                <div data-translate-key="9"><button type="button" id="other-btn" class="gender-btn" value="other"></button>other</div>
+                            <div id="gender-menu-btns" data-translate-key="7">
+                                <button type="button" id="male-btn" class="gender-btn" value="male"></button>male
+                                <button type="button" id="female-btn" class="gender-btn" value="female"></button>female
+                                <button type="button" id="other-btn" class="gender-btn" value="other"></button>other
                             </div>
                         </div>
                         <input id="weight-input" type="number" placeholder="weight">
@@ -169,7 +169,7 @@
                         </thead>
                         <tbody>
                             <tr class="category-starvation">
-                                <td data-translate-key="18">Starvation</td>
+                                <td data-translate-key="18" class="bold">Starvation</td>
                                 <td>> 16.0</td>
                                 <td data-translate-key="19">Emaciated</td>
                                 <td data-translate-key="20">Severe risk of organ failure, weakened immunity, and nutrient deficiency</td>
@@ -234,20 +234,20 @@
                 </div>
                 <div id="origin-para" class="animate-on-scroll">
                     <strong data-translate-key="42">The Origin of BMI</strong>
-                    <p data-translate-key="43">The Body Mass Index (BMI) was first conceived in 1832 by <u data-translate-key="44" data-info="Lambert Adolphe Jacques Quételet (b. Feb 22, 1796, Ghent - d. Feb 17, 1874, Brussels) was a Belgian astronomer, mathematician, statistician, meteorologist, sociologist, and criminologist. He developed the Body Mass Index (BMI) and posed the Quetelet question: Why does crime vary across social groups?">Adolphe Quetelet</u>,
+                    <p data-translate-key="43">The Body Mass Index (BMI) was first conceived in 1832 by <u data-info="Lambert Adolphe Jacques Quételet (b. Feb 22, 1796, Ghent - d. Feb 17, 1874, Brussels) was a Belgian astronomer, mathematician, statistician, meteorologist, sociologist, and criminologist. He developed the Body Mass Index (BMI) and posed the Quetelet question: Why does crime vary across social groups?">Adolphe Quetelet</u>,
                         a Belgian mathematician.
                         Quetelet conducted extensive research, including studies to characterize
                         the "average person." He observed a consistent relationship: human weight
                         tends to increase proportionally to the square of a person's height. This
                         discovery led to his "Quetelet's Index."
                         This index was later renamed the Body Mass Index (BMI) in 1972 by American
-                        physiologist <u data-translate-key="45" data-info="American physiologist who popularized the term Body Mass Index in 1972.">Ancel Keys</u>.
+                        physiologist <u data-info="American physiologist who popularized the term Body Mass Index in 1972.">Ancel Keys</u>.
                     </p>
                 </div>
                 <div id="who-bmi-chart" class="animate-on-scroll">
                     <strong data-translate-key='46'>BMI chart for adults</strong>
                     <p data-translate-key="47">BMI categories, as depicted in this graph,
-                        are derived from <u data-translate-key="48" data-info="World Health Organization, a specialized agency of the United Nations responsible for international public health.">World Health Organization</u> data.
+                        are derived from <u data-info="World Health Organization, a specialized agency of the United Nations responsible for international public health.">World Health Organization</u> data.
                         Major classifications are further broken down by dashed
                         line subdivisions.</p>
                     <div id="who-graph" class="dark-who-graph"></div>
@@ -256,7 +256,7 @@
 
                 <div class="detail-section animate-on-scroll">
                     <strong data-translate-key="49">Understanding Your BMI: Risks, Limitations & Calculation</strong>
-                    <p>Before diving into the specific health risks associated with being overweight or underweight, it is
+                    <p data-translate-key="96">Before diving into the specific health risks associated with being overweight or underweight, it is
                     important to understand what a healthy BMI range means in real-life terms. Maintaining a balanced weight
                     isn not just about numbers — it is about supporting your body's vital functions, energy levels, and overall resilience.
                     Let's explore the potential consequences when BMI falls outside the recommended range
@@ -380,7 +380,7 @@
 
                         </tr>
                         </table>
-                        <em data-translate-key="89">*Example: For a 72.57-kilogram individual who is 1.778 centimeters tall:</em>
+                        <em data-translate-key="89">* Example: For a 72.57-kilogram individual who is 1.778 centimeters tall:</em>
                     </div>
 
                         <div class="bmi-table-container hidden" id="imperial-formula">
@@ -408,7 +408,7 @@
                                 </td>
                             </tr>
                             </table>
-                            <em data-translate-key="93">*Example: For a 160-pound individual who is 5'10" (70 inches tall):</em>
+                            <em data-translate-key="93">* Example: For a 160-pound individual who is 5'10" (70 inches tall):</em>
                         </div>
 
                     </div>
@@ -421,7 +421,7 @@
         <span id="footer-logo" class="logo" title="go up">FishScale</span>
 
             <div>
-            <p id="credit">Created by JL</p>
+            <p id="credit" data-translate-key="97">Created by JL</p>
                 <div id="media">
                     <a href="https://github.com/Jakub-Laska" target="_blank">
                         <img src="img/github.png" alt="github icon" class="mediaIcon"></a>
@@ -432,8 +432,8 @@
                 </div>
 
             </div>
-            <p id="disclaimer">
-            *This calculator is intended solely for general informational and educational purposes. It <span>does not</span> constitute or substitute for professional medical advice, diagnosis, or treatment.
+            <p id="disclaimer" data-translate-key="98">
+            * This calculator is intended solely for general informational and educational purposes. It <span>does not</span> constitute or substitute for professional medical advice, diagnosis, or treatment.
             </p>
             <div class="bubble-background"></div>
 

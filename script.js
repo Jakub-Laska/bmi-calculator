@@ -232,30 +232,8 @@ const observer = new IntersectionObserver(entries => {
 
 textElements.forEach(el => observer.observe(el));
 
-// more info hover popup
-const underscored = document.querySelectorAll('u');
 
-underscored.forEach(e => {
-    e.addEventListener('mouseenter', () => {
-        e.style.backgroundColor = 'transparent';
-        const popupInfo = document.createElement('div');
-        popupInfo.classList.add('popup-info')
-        const info = e.getAttribute('data-info') || 'no info';
-        popupInfo.textContent = info;
-        e.appendChild(popupInfo);
-    });
 
-    e.addEventListener('mouseleave', () => {
-        e.style.backgroundColor = 'var(--cold-blue)';
-
-        const popupInfo = e.querySelector('.popup-info');
-        if (popupInfo) {
-            setTimeout(() => {
-            e.removeChild(popupInfo);                
-            }, 300);
-        }
-    });
-})
 
 // bubbles overlay
 function generateBubbles(count = 16) {
@@ -327,7 +305,31 @@ const fishObserver = new IntersectionObserver(entries => {
 
 fishIcons.forEach(icon => fishObserver.observe(icon));
 
+// more info hover popup
 
+function infoPopup() {
+const underscored = document.querySelectorAll('u');
+
+
+underscored.forEach(e => {
+    e.addEventListener('mouseenter', () => {
+        e.style.backgroundColor = 'transparent';
+        const popupInfo = document.createElement('div');
+        popupInfo.classList.add('popup-info')
+        const info = e.getAttribute('data-info') || 'no info';
+        popupInfo.textContent = info;
+        e.appendChild(popupInfo);
+    });
+
+    e.addEventListener('mouseleave', () => {
+        e.style.backgroundColor = 'var(--cold-blue)';
+
+        const popupInfo = e.querySelector('.popup-info');
+            e.removeChild(popupInfo);                
+    });
+})
+}
+infoPopup()
 // language button
 
 const langBtn = document.querySelectorAll('.lang-btn');
@@ -344,6 +346,7 @@ langBtn.forEach(el => {
 
       if (!isPolish) {
     applyTranslations(polishTranslations);
+        infoPopup()
         langText.forEach(el => {
             el.textContent = 'PL';
         });
@@ -351,6 +354,7 @@ langBtn.forEach(el => {
     document.documentElement.lang = 'pl';  // Set html lang attribute to Polish
   } else {
     applyTranslations(englishTranslations);
+        infoPopup()
         langText.forEach(el => {
             el.textContent = 'EN';
         }); 
@@ -368,25 +372,24 @@ function applyTranslations(translations) {
       el.innerHTML = translations[key];
     }
   });
+
 }
 
 
 
 const englishTranslations = {
-  "1": "FishScale Body Mass Index Calculator",
-  "2": "Enter your height and weight to see how your numbers stack up using the Body Mass Index (BMI) scale. This easy-to-use calculator gives you a quick insight into whether you're underweight, at a healthy weight, overweight, or obese. It's a simple way to stay informed about your overall health and take the first step toward better well-being.",
-  "3": "Enter your Details below:",
-  "4": "Metric",
-  "5": "Imperial",
-  "6": "Gender:",
-  "7": "male",
-  "8": "female",
-  "9": "other",
-  "10": "clear",
-  "11": "calculate",
-  "12": "What your BMI result means...",
-  "13": "Your BMI falls into a specific category that reflects your general weight status. A lower BMI may indicate you're underweight, while a higher BMI could suggest overweight or obesity. These categories help assess potential health risks, but remember — BMI is a rough estimate and doesn't consider factors like muscle mass, bone density, or overall fitness.",
-  "14": "BMI Categories for Adults",
+  "1": "<h1><span>FishScale</span><br> Body Mass <br>Index Calculator</h1>",
+  "2": "<p>Enter your height and weight to see how your numbers stack up using the Body Mass Index (BMI) scale. This easy-to-use calculator gives you a quick insight into whether you're underweight, at a healthy weight, overweight, or obese. It's a simple way to stay informed about your overall health and take the first step toward better well-being.</p>",
+  "3": "<h3>Enter your Details below:</h3>",
+  "4": "<button>Metric</button>",
+  "5": "<button>Imperial</button>",
+  "6": "<h4>Gender:</h4>",
+  '7': '<button type="button" id="male-btn" class="gender-btn" value="male"></button>male <button type="button" id="female-btn" class="gender-btn" value="female"></button> female <button type="button" id="other-btn" class="gender-btn" value="other"></button> other',
+  "10": "<button>clear</button>",
+  "11": "<button>calculate</button>",
+  "12": "<h2>What your BMI result means...</h2>",
+  "13": "<p>Your BMI falls into a specific category that reflects your general weight status. A lower BMI may indicate you're underweight, while a higher BMI could suggest overweight or obesity. These categories help assess potential health risks, but remember — BMI is a rough estimate and doesn't consider factors like muscle mass, bone density, or overall fitness.</p>",
+  "14": "<strong>BMI Categories for Adults</strong>",
   "15": "Category",
   "16": "Body Type",
   "17": "Associated Health Risk",
@@ -414,16 +417,13 @@ const englishTranslations = {
   "39": "Obesity Class III (Morbid)",
   "40": "Morbidly obese",
   "41": "Critical risk of life-threatening conditions including stroke, heart disease, and sleep apnea",
-  "42": "The Origin of BMI",
-  "43": "The Body Mass Index (BMI) was first conceived in 1832 by Adolphe Quetelet, a Belgian mathematician. Quetelet conducted extensive research, including studies to characterize the \"average person.\" He observed a consistent relationship: human weight tends to increase proportionally to the square of a person's height. This discovery led to his \"Quetelet's Index.\" This index was later renamed the Body Mass Index (BMI) in 1972 by American physiologist Ancel Keys.",
-  "44": "Adolphe Quetelet",
-  "45": "Ancel Keys",
-  "46": "BMI chart for adults",
-  "47": "BMI categories, as depicted in this graph, are derived from World Health Organization data. Major classifications are further broken down by dashed line subdivisions.",
-  "48": "World Health Organization",
-  "49": "Understanding Your BMI: Risks, Limitations & Calculation",
-  "50": "Risks Associated with Being Overweight",
-  "51": "Carrying excess weight can significantly impact your health. It's linked to a range of serious conditions, including:",
+  "42": "<strong>The Origin of BMI</strong>",
+  "43": "<p>The Body Mass Index (BMI) was first conceived in 1832 by <u  data-info=\'Lambert Adolphe Jacques Quételet (b. Feb 22, 1796, Ghent - d. Feb 17, 1874, Brussels) was a Belgian astronomer, mathematician, statistician, meteorologist, sociologist, and criminologist. He developed the Body Mass Index (BMI) and posed the Quetelet question: Why does crime vary across social groups?\'>Adolphe Quetelet</u>, a Belgian mathematician. Quetelet conducted extensive research, including studies to characterize the \"average person.\" He observed a consistent relationship: human weight tends to increase proportionally to the square of a person's height. This discovery led to his \"Quetelet's Index.\" This index was later renamed the Body Mass Index (BMI) in 1972 by American physiologist <u data-info=\'American physiologist who popularized the term Body Mass Index in 1972.\'>Ancel Keys</u>.</p>",
+  "46": "<strong>BMI chart for adults</strong>",
+  "47": "<p>BMI categories, as depicted in this graph, are derived from <u data-info=\'World Health Organization, a specialized agency of the United Nations responsible for international public health.\'>World Health Organization</u> data. Major classifications are further broken down by dashed line subdivisions.</p>",
+  "49": "<strong>Understanding Your BMI: Risks, Limitations & Calculation</strong>",
+  "50": "<strong>Risks Associated with Being Overweight</strong>",
+  "51": "<p>Carrying excess weight can significantly impact your health. It's linked to a range of serious conditions, including:</p>",
   "52": "High blood pressure.",
   "53": "Unhealthy cholesterol levels (high \"bad\" LDL, low \"good\" HDL) and high triglycerides.",
   "54": "Type II diabetes.",
@@ -434,9 +434,9 @@ const englishTranslations = {
   "59": "Increased risk of certain cancers (like endometrial, breast, colon, kidney, liver).",
   "60": "Reduced quality of life, body aches, and difficulty with physical activities.",
   "61": "A higher risk of mortality overall compared to those with a healthy BMI.",
-  "62": "Given these potential consequences, striving for a BMI below 25 kg/m² is generally recommended. However, always consult a healthcare professional to discuss your personal health goals and lifestyle adjustments.",
-  "63": "Risks Associated with Being Underweight",
-  "64": "Being underweight also presents its own set of health challenges:",
+  "62": "<p>Given these potential consequences, striving for a BMI below 25 kg/m² is generally recommended. However, always consult a healthcare professional to discuss your personal health goals and lifestyle adjustments.</p>",
+  "63": "<strong>Risks Associated with Being Underweight</strong>",
+  "64": "<span>Being underweight also presents its own set of health challenges:</span>",
   "65": "Malnutrition, vitamin deficiencies, and anemia.",
   "66": "Osteoporosis, leading to weaker bones and a higher risk of fractures.",
   "67": "Weakened immune function.",
@@ -444,29 +444,29 @@ const englishTranslations = {
   "69": "For women, hormonal imbalances can affect reproductive health and increase miscarriage risk in early pregnancy.",
   "70": "Increased complications if surgery is needed.",
   "71": "A generally higher risk of mortality compared to those with a healthy BMI.",
-  "72": "Sometimes, being underweight can be a symptom of an underlying health condition like anorexia nervosa. If you or someone you know is underweight without an obvious reason, it's wise to consult a doctor.",
-  "73": "anorexia nervosa",
-  "74": "Understanding BMI's Limitations",
-  "75": "While BMI is a widely used and helpful tool for estimating healthy body weight, it's not a perfect measure. It's essentially a calculation of excess body weight, not excess body fat, and it doesn't account for individual body composition.",
-  "76": "Factors like age, sex, ethnicity, muscle mass, and activity level can influence BMI. For instance:",
+  "72": "<p>Sometimes, being underweight can be a symptom of an underlying health condition like anorexia nervosa. If you or someone you know is underweight without an obvious reason, it's wise to consult a doctor.</p>",
+  "73": "<u>anorexia nervosa</u>",
+  "74": "<strong>Understanding BMI's Limitations</strong>",
+  "75": "<p>While BMI is a widely used and helpful tool for estimating healthy body weight, it's not a perfect measure. It's essentially a calculation of excess body weight, not excess body fat, and it doesn't account for individual body composition.</p>",
+  "76": "<p>Factors like age, sex, ethnicity, muscle mass, and activity level can influence BMI. For instance:</p>",
   "77": "Older adults may have more body fat than younger adults at the same BMI.",
   "78": "Women often have more body fat than men at an equivalent BMI.",
   "79": "Athletes, especially bodybuilders, might have a higher BMI due to significant muscle mass (muscle weighs more than fat), even if they are very healthy.",
   "80": "In children and adolescents, similar factors apply, and BMI can also be influenced by height and sexual maturation.",
   "81": "Despite these limitations, BMI is a fairly good indicator of body fat for 90-95% of the population. It's best used as one tool among several (like waist circumference or body fat percentage) to determine a truly healthy weight for an individual.",
-  "82": "How to Calculate BMI",
+  "82": "<strong>How to Calculate BMI</strong>",
   "83": "metric",
   "84": "imperial",
   "85": "BMI is calculated using simple formulas based on your mass and height. Here are the equations:",
-  "86": "SI (Metric) Units (kilograms and meters):",
-  "87": "mass (kg)",
-  "88": "height² (m)",
-  "89": "*Example: For a 72.57-kilogram individual who is 1.778 meters tall:",
-  "90": "US Customary Units (pounds and inches):",
-  "91": "mass (lbs)",
-  "92": "height² (in)",
-  "93": "*Example: For a 160-pound individual who is 5'10\" (70 inches tall):",
-    '94': "Recommended BMI by Age",
+  "86": "<span>SI (Metric) Units (kilograms and meters):</span>",
+  "87": "<span>mass (kg)</span>",
+  "88": "<span>height² (m)</span>",
+  "89": "<em>* Example: For a 72.57-kilogram individual who is 1.778 meters tall:</em>",
+  "90": "<span>US Customary Units (pounds and inches):</span>",
+  "91": "<span>mass (lbs)</span>",
+  "92": "<span>height² (in)</span>",
+  "93": "<em>* Example: For a 160-pound individual who is 5'10\" (70 inches tall):</em>",
+    '94': "<strong>Recommended BMI by Age</strong>",
   '95': `
     <li>19 - 24 years: 19 - 24</li>
     <li>25 - 34 years: 20 - 25</li>
@@ -474,24 +474,32 @@ const englishTranslations = {
     <li>45 - 54 years: 22 - 27</li>
     <li>55 - 64 years: 23 - 28</li>
     <li>Over 64 years: 24 - 29</li>
-  `
+  `,
+    '96': `<p>Before diving into the specific health risks associated with being overweight or underweight, it is
+  important to understand what a healthy BMI range means in real-life terms. Maintaining a balanced weight
+  isn't just about numbers — it's about supporting your body's vital functions, energy levels, and overall resilience.
+  Let's explore the potential consequences when BMI falls outside the recommended range.</p>`,
+    '97': `<p>Created by JL</p>`,
+    '98': `<p>* This calculator is intended solely for general informational and educational purposes. It <span>does not</span> constitute or substitute for professional medical advice, diagnosis, or treatment.</p>`
 };
 
+
+// polish translations
+
+
 const polishTranslations = {
-  "1": "FishScale Kalkulator Wskaźnika Masy Ciała",
-  "2": "Wprowadź swój wzrost i wagę, aby zobaczyć, jak wypadasz na skali Wskaźnika Masy Ciała (BMI). Ten prosty w użyciu kalkulator szybko pokaże, czy jesteś niedowagą, w zdrowej wadze, nadwagą, czy otyłością. To łatwy sposób, by być na bieżąco ze swoim zdrowiem i zrobić pierwszy krok ku lepszemu samopoczuciu.",
-  "3": "Wprowadź swoje dane poniżej:",
-  "4": "Metryczny",
-  "5": "Imperialny",
-  "6": "Płeć:",
-  "7": "mężczyzna",
-  "8": "kobieta",
-  "9": "inna",
-  "10": "wyczyść",
-  "11": "oblicz",
-  "12": "Co oznacza twój wynik BMI...",
-  "13": "Twój BMI plasuje się w konkretnej kategorii, która odzwierciedla ogólny stan Twojej wagi. Niższy BMI może wskazywać na niedowagę, a wyższy – na nadwagę lub otyłość. Kategorie te pomagają ocenić potencjalne ryzyko zdrowotne, ale pamiętaj — BMI to przybliżony wskaźnik i nie uwzględnia masy mięśniowej, gęstości kości czy ogólnej kondycji.",
-  "14": "Kategorie BMI dla dorosłych",
+  "1": "<strong><span>FishScale</span><br> Kalkulator Wskaźnika <br>Masy Ciała</strong>",
+  "2": "<p>Wprowadź swój wzrost i wagę, aby zobaczyć, jak wypadasz na skali Wskaźnika Masy Ciała (BMI). Ten prosty w użyciu kalkulator szybko pokaże, czy jesteś niedowagą, w zdrowej wadze, nadwagą czy otyłością. To łatwy sposób, by być na bieżąco ze swoim zdrowiem i zrobić pierwszy krok ku lepszemu samopoczuciu.</p>",
+  "3": "<h3>Wprowadź swoje dane poniżej:</h3>",
+  "4": "<button>Metryczny</button>",
+  "5": "<button>Imperialny</button>",
+  "6": "<h4>Płeć:</h4>",
+  "7": '<button type="button" id="male-btn" class="gender-btn" value="male"></button>mężczyzna <button type="button" id="female-btn" class="gender-btn" value="female"></button> kobieta <button type="button" id="other-btn" class="gender-btn" value="other"></button> inna',
+  "10": "<button>Wyczyść</button>",
+  "11": "<button>Oblicz</button>",
+  "12": "<h2>Co oznacza twój wynik BMI...</h2>",
+  "13": "<p>Twój BMI plasuje się w konkretnej kategorii, która odzwierciedla ogólny stan Twojej wagi. Niższy BMI może wskazywać na niedowagę, a wyższy - na nadwagę lub otyłość. Kategorie te pomagają ocenić potencjalne ryzyko zdrowotne, ale pamiętaj — BMI to przybliżony wskaźnik i nie uwzględnia masy mięśniowej, gęstości kości czy ogólnej kondycji.</p>",
+  "14": "<strong>Kategorie BMI dla dorosłych</strong>",
   "15": "Kategoria",
   "16": "Typ sylwetki",
   "17": "Powiązane ryzyko zdrowotne",
@@ -519,39 +527,36 @@ const polishTranslations = {
   "39": "Otyłość klasy III (otyłość skrajna)",
   "40": "Skrajna otyłość",
   "41": "Krytyczne ryzyko zagrażających życiu schorzeń, w tym udaru, chorób serca i bezdechu sennego",
-  "42": "Pochodzenie BMI",
-  "43": "Wskaźnik Masy Ciała (BMI) został po raz pierwszy opracowany w 1832 roku przez belgijskiego matematyka Adolphe Queteleta. Przeprowadził on szeroko zakrojone badania, w tym nad \"przeciętnym człowiekiem.\" Zaobserwował, że masa ciała człowieka rośnie proporcjonalnie do kwadratu jego wzrostu. Odkrycie to nazwano \"Indeksem Queteleta.\" W 1972 roku amerykański fizjolog Ancel Keys nadał mu nazwę Wskaźnik Masy Ciała (BMI).",
-  "44": "Adolphe Quetelet",
-  "45": "Ancel Keys",
-  "46": "Wykres BMI dla dorosłych",
-  "47": "Kategorie BMI przedstawione na tym wykresie pochodzą z danych Światowej Organizacji Zdrowia. Główne klasyfikacje są dodatkowo rozdzielone liniami przerywanymi.",
-  "48": "Światowa Organizacja Zdrowia",
-  "49": "Zrozumienie BMI: ryzyka, ograniczenia i obliczanie",
-  "50": "Ryzyka związane z nadwagą",
-  "51": "Noszenie nadmiernej masy ciała może poważnie wpłynąć na twoje zdrowie. Powiązane jest z wieloma poważnymi schorzeniami, w tym:",
+  "42": "<strong>Pochodzenie BMI</strong>",
+  "43": "<p>Wskaźnik Masy Ciała (BMI) został po raz pierwszy wprowadzony w 1832 roku przez <u data-info='Lambert Adolphe Jacques Quételet (ur. 22 lutego 1796 w Gandawie - zm. 17 lutego 1874 w Brukseli) był belgijskim astronomem, matematykiem, statystykiem, meteorologiem, socjologiem i kryminologiem. Opracował wskaźnik masy ciała (BMI) i postawił pytanie Quételeta: Dlaczego przestępczość różni się między grupami społecznymi?'>Adolphe Queteleta</u>, belgijskiego matematyka. Quetelet przeprowadził szerokie badania, w tym analizy mające na celu opisanie „przeciętnego człowieka.” Zaobserwował stały związek: masa ciała człowieka rośnie proporcjonalnie do kwadratu jego wzrostu. Odkrycie to doprowadziło do powstania tzw. „Wskaźnika Queteleta.” W 1972 roku amerykański fizjolog <u data-info=\'Amerykański fizjolog, który spopularyzował termin wskaźnika masy ciała (BMI) w 1972 roku.\'>Ancel Keys</u> nadał temu wskaźnikowi nazwę Body Mass Index (BMI).</p>",
+  "46": "<strong>Wykres BMI dla dorosłych</strong>",
+  "47": "<p>Kategorie BMI, przedstawione na tym wykresie, pochodzą z danych <u data-info=\'Światowa Organizacja Zdrowia, wyspecjalizowana agenda ONZ odpowiedzialna za międzynarodowe zdrowie publiczne.\'>Światowej Organizacji Zdrowia.</u>. Główne klasyfikacje zostały dodatkowo podzielone za pomocą linii przerywanych.</p>",
+  "49": "<strong>Zrozumienie Twojego BMI: Ryzyka, Ograniczenia i Obliczenia</strong>",
+  "50": "<strong>Ryzyka związane z nadwagą</strong>",
+  "51": "<p>Nadmierna waga może znacząco wpłynąć na Twoje zdrowie. Jest związana z wieloma poważnymi schorzeniami, w tym:</p>",
   "52": "Wysokie ciśnienie krwi.",
-  "53": "Niezdrowy poziom cholesterolu (wysoki \"zły\" LDL, niski \"dobry\" HDL) i wysoki poziom trójglicerydów.",
+  "53": "Niezdrowe poziomy cholesterolu (wysoki \"zły\" LDL, niski \"dobry\" HDL) oraz podwyższone trójglicerydy.",
   "54": "Cukrzyca typu II.",
   "55": "Choroby serca i udar.",
   "56": "Problemy z woreczkiem żółciowym.",
   "57": "Osteoartroza (zużycie stawów).",
-  "58": "Bezdech senny i problemy z oddychaniem.",
+  "58": "Bezdech senny i trudności z oddychaniem.",
   "59": "Zwiększone ryzyko niektórych nowotworów (np. endometrium, piersi, jelita grubego, nerek, wątroby).",
-  "60": "Obniżona jakość życia, bóle ciała i trudności w wykonywaniu czynności fizycznych.",
-  "61": "Wyższe ryzyko śmiertelności w porównaniu z osobami o zdrowym BMI.",
-  "62": "Ze względu na te potencjalne konsekwencje zaleca się dążenie do BMI poniżej 25 kg/m². Zawsze jednak konsultuj się z lekarzem w celu omówienia swoich celów zdrowotnych i stylu życia.",
-  "63": "Ryzyka związane z niedowagą",
-  "64": "Niedowaga również niesie ze sobą swoje wyzwania zdrowotne:",
-  "65": "Niedożywienie, niedobory witamin i anemia.",
-  "66": "Osteoporoza, prowadząca do osłabienia kości i zwiększonego ryzyka złamań.",
+  "60": "Obniżona jakość życia, bóle ciała i trudności w wykonywaniu aktywności fizycznych.",
+  "61": "Wyższe ryzyko śmiertelności w porównaniu z osobami o prawidłowej masie ciała.",
+  "62": "<p>Z uwagi na te możliwe konsekwencje, zaleca się dążenie do BMI poniżej 25 kg/m². Jednak zawsze skonsultuj się z lekarzem, aby omówić swoje indywidualne cele zdrowotne i ewentualne zmiany stylu życia.</p>",
+  "63": "<strong>Ryzyka związane z niedowagą</strong>",
+  "64": "<span>Niedowaga również niesie ze sobą pewne wyzwania zdrowotne:</span>",
+  "65": "Niedożywienie, niedobory witamin oraz anemia.",
+  "66": "Osteoporoza, prowadząca do słabszych kości i większego ryzyka złamań.",
   "67": "Osłabiona funkcja odpornościowa.",
-  "68": "Potencjalne problemy z wzrostem i rozwojem, zwłaszcza u młodszych osób.",
-  "69": "U kobiet zaburzenia hormonalne mogą wpływać na zdrowie rozrodcze i zwiększać ryzyko poronień we wczesnej ciąży.",
-  "70": "Zwiększone komplikacje podczas operacji.",
-  "71": "Ogólnie wyższe ryzyko śmiertelności w porównaniu z osobami o zdrowym BMI.",
-  "72": "Czasem niedowaga może być objawem poważnej choroby, jak anoreksja. Jeśli Ty lub ktoś z Twoich bliskich jest niedowagą bez wyraźnej przyczyny, warto skonsultować się z lekarzem.",
-  "73": "anoreksja",
-  "74": "Ograniczenia BMI",
+  "68": "Problemy z wzrostem i rozwojem, szczególnie u młodszych osób.",
+  "69": "U kobiet, zaburzenia hormonalne mogą wpływać na zdrowie rozrodcze i zwiększać ryzyko poronienia we wczesnej ciąży.",
+  "70": "Większe komplikacje przy konieczności operacji.",
+  "71": "Ogólnie wyższe ryzyko śmiertelności w porównaniu z osobami o prawidłowej masie ciała.",
+  "72": "<p>Czasami niedowaga może być objawem choroby, np. anoreksji. Jeśli Ty lub ktoś Ci bliski jest niedożywiony bez oczywistej przyczyny, warto skonsultować się z lekarzem.</p>",
+  "73": "<u>Jadłowstręt psychiczny</u>",
+  "74": "<strong>Ograniczenia BMI</strong>",
   "75": "Choć BMI jest powszechnie stosowanym i przydatnym narzędziem do szacowania zdrowej masy ciała, nie jest idealny. Oblicza nadmiar masy ciała, a nie nadmiar tłuszczu, i nie uwzględnia indywidualnej budowy ciała.",
   "76": "Czynniki takie jak wiek, płeć, pochodzenie etniczne, masa mięśniowa i poziom aktywności wpływają na BMI. Na przykład:",
   "77": "Starsze osoby mogą mieć więcej tkanki tłuszczowej niż młodsze przy tym samym BMI.",
@@ -559,25 +564,31 @@ const polishTranslations = {
   "79": "Sportowcy, zwłaszcza kulturyści, mogą mieć wyższy BMI z powodu dużej masy mięśniowej (mięśnie ważą więcej niż tłuszcz), mimo że są bardzo zdrowi.",
   "80": "U dzieci i młodzieży podobne czynniki mają znaczenie, a BMI może być również wpływane przez wzrost i dojrzewanie płciowe.",
   "81": "Mimo tych ograniczeń, BMI jest dość dobrym wskaźnikiem zawartości tłuszczu u 90-95% populacji. Najlepiej używać go razem z innymi metodami (np. obwód talii, procent tkanki tłuszczowej) dla pełniejszej oceny.",
-  "82": "Jak obliczyć BMI",
+  "82": "<strong>Jak obliczyć BMI</strong>",
   "83": "metryczny",
   "84": "imperialny",
   "85": "BMI obliczamy za pomocą prostych wzorów opartych na masie i wzroście. Oto równania:",
-  "86": "Jednostki SI (metryczne) (kilogramy i metry):",
+  "86": "<span>Jednostki SI (metryczne) (kilogramy i metry):</span>",
   "87": "masa (kg)",
   "88": "wzrost² (m)",
-  "89": "*Przykład: dla osoby ważącej 72,57 kg i mającej 1,778 m wzrostu:",
-  "90": "Jednostki amerykańskie (funty i cale):",
+  "89": "<em>*Przykład: dla osoby ważącej 72,57 kg i mającej 1,778 m wzrostu:</em>",
+  "90": "<span>Jednostki amerykańskie (funty i cale):</span>",
   "91": "masa (lbs)",
   "92": "wzrost² (in)",
-  "93": "*Przykład: dla osoby ważącej 160 funtów i mającej 5'10\" (70 cali):",
+  "93": "<em>* Przykład: dla osoby ważącej 160 funtów i mającej 5'10\" (70 cali):</em>",
     '94': "Zalecane BMI według wieku",
   '95': `
-    <li>19–24 lata: 19–24</li>
-    <li>25–34 lata: 20–25</li>
-    <li>35–44 lata: 21–26</li>
-    <li>45–54 lata: 22–27</li>
-    <li>55–64 lata: 23–28</li>
-    <li>Powyżej 64 lat: 24–29</li>
-  `
+    <li>19-24 lata: 19-24</li>
+    <li>25-34 lata: 20-25</li>
+    <li>35-44 lata: 21-26</li>
+    <li>45-54 lata: 22-27</li>
+    <li>55-64 lata: 23-28</li>
+    <li>Powyżej 64 lat: 24-29</li>
+  `,
+    '96': `<p>Zanim zagłębimy się w konkretne zagrożenia zdrowotne związane z nadwagą lub niedowagą, warto zrozumieć,
+  co oznacza zdrowy zakres BMI w praktyce. Utrzymywanie zrównoważonej wagi to nie tylko liczby — to wsparcie
+  dla kluczowych funkcji organizmu, poziomu energii i ogólnej odporności. Przeanalizujmy potencjalne konsekwencje,
+  gdy BMI wykracza poza zalecany zakres.</p>`,
+    '97': `<p>Stworzone przez JL</p>`,
+      '98': `<p>* Ten kalkulator służy wyłącznie ogólnym celom informacyjnym i edukacyjnym. <span>Nie stanowi</span> ani nie zastępuje profesjonalnej porady medycznej, diagnozy ani leczenia.</p>`,
 }

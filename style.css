@@ -730,8 +730,6 @@ u {
     transform: translateX(-50%);
     max-width: 400px;
     width: max-content;       
-    min-width: 200px;         
-    text-align: justify;
     background: var(--gradient);
     border-radius: 16px;
     box-shadow: -4px -4px 10px var(--primary-blue);
@@ -739,9 +737,10 @@ u {
     font-size: 0.6vw;
     font-weight: 900;
     word-break: break-word;
+    text-align: left;
+    line-height: 1.5;
 }
 .popup-info u {
-    text-align: justify;
     hyphens: auto;
     margin: 0;
 }
@@ -903,7 +902,6 @@ u {
     opacity: 1;
   }
 }
-
 
 
 
