@@ -158,14 +158,22 @@ calculateBtn.addEventListener('click', ()=>{
 
     console.log(weightValue / (heightValue ** 2) * 10000);
 
-    const bmiForm = document.querySelector('.form');
+    resultWindowToggle()
+    clearBtnFunction();
+})
+// result window toggle
+function resultWindowToggle() {
+      const bmiForm = document.querySelector('.form');
     bmiForm.classList.toggle('hidden');
     const bmiResultWindow = document.querySelector('.bmi-result-window');
     bmiResultWindow.classList.toggle('hidden');
+}
+// result window
 
-    clearBtnFunction();
+const resultWindowExitBtn = document.querySelector('.bmi-result-exit-btn');
 
-
+resultWindowExitBtn.addEventListener('click', ()=>{
+  resultWindowToggle()
 })
 
 // dark mode
