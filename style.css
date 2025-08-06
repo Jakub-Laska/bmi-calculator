@@ -902,6 +902,8 @@ u {
     opacity: 1;
   }
 }
-
-
+#calculate-btn:disabled {
+    opacity: 0.1;
+    pointer-events: none;
+}
 

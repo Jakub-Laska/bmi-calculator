@@ -146,9 +146,11 @@ function clearBtnFunction() {
 
 const calculateBtn = document.getElementById('calculate-btn');
 calculateBtn.addEventListener('click', ()=>{
-
-    const ageInput = document.getElementById('age-input')
-    let ageValue = ageInput.value;
+      if (weight > 0 && height > 0) {
+    calculateBtn.disabled = false;
+  } else {
+    calculateBtn.disabled = true;
+  }
 
     const weightInput = document.getElementById('weight-input');
     let weightValue = weightInput.value;
@@ -156,14 +158,20 @@ calculateBtn.addEventListener('click', ()=>{
     const heightInput = document.getElementById('height-input');
     let heightValue = heightInput.value;
 
-    console.log(weightValue / (heightValue ** 2) * 10000);
+    let bmiResult = (weightValue / (heightValue ** 2) * 10000);
+
+
+    console.log(bmiResult);
+
+    const resultWindowResult = document.querySelector('#result-window-result');
+    resultWindowResult.innerHTML = `Your result: ${bmiResult}`;
 
     resultWindowToggle()
     clearBtnFunction();
 })
 // result window toggle
 function resultWindowToggle() {
-      const bmiForm = document.querySelector('.form');
+    const bmiForm = document.querySelector('.form');
     bmiForm.classList.toggle('hidden');
     const bmiResultWindow = document.querySelector('.bmi-result-window');
     bmiResultWindow.classList.toggle('hidden');
@@ -175,6 +183,9 @@ const resultWindowExitBtn = document.querySelector('.bmi-result-exit-btn');
 resultWindowExitBtn.addEventListener('click', ()=>{
   resultWindowToggle()
 })
+
+
+
 
 // dark mode
 
