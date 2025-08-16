@@ -28,7 +28,7 @@ This project is ideal for beginners looking to practice DOM manipulation, event 
 - CSS
 - JavaScript
 
-- <!-- 
+<!-- 
 _______/\\\\\\\_______/\\\_____________        
  ______\/////\\\______\/\\\_____________       
   __________\/\\\______\/\\\_____________      
