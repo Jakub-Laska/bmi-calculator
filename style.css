@@ -152,6 +152,9 @@ table {
     opacity: 0;
     pointer-events: none;
 }
+#modal-disclaimer {
+    padding: 6px;
+}
 body.overflow-hidden {
     overflow: hidden;
 }
