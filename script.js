@@ -166,17 +166,24 @@ function clearBtnFunction() {
 // calculate btn
 
 const calculateBtn = document.getElementById('calculate-btn');
-calculateBtn.addEventListener('click', ()=>{
-      if (weight > 0 && height > 0) {
-    calculateBtn.disabled = false;
-  } else {
-    calculateBtn.disabled = true;
-  }
+const weightInput = document.getElementById('weight-input');
+const heightInput = document.getElementById('height-input');
 
-    const weightInput = document.getElementById('weight-input');
+calculateBtn.disabled = true;
+
+function calculateBtnState() {
+  if (weightInput.value !== '' && heightInput.value !== '') {
+  calculateBtn.disabled = false;
+  } else {
+  calculateBtn.disabled = true;
+  }
+}
+weightInput.addEventListener('input', calculateBtnState);
+heightInput.addEventListener('input', calculateBtnState);
+
+calculateBtn.addEventListener('click', ()=>{
     let weightValue = weightInput.value;
 
-    const heightInput = document.getElementById('height-input');
     let heightValue = heightInput.value;
 
     let bmiResult = (weightValue / (heightValue ** 2) * 10000);
