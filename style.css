@@ -343,13 +343,23 @@ button:hover {
 .bmi-result-window {
     width: 100%;
     width: 100%;
-    background-color: red;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+.bmi-result-window span {
+    margin: 0;
 }
 .bmi-result-exit-btn {
-    width: 32px;
-    height: 32px;
+padding: 12px;
+background: url(img/close.svg);
+background-repeat: no-repeat;
+position: absolute;
+top: 0;
+right: 0;
+background-color: var(--cold-blue);
 }
 #mid-section {
     display: flex;
@@ -518,39 +528,6 @@ td {
     width: 100%;
     border-top-left-radius: 100%;
 }
-
-/* maybe some text animation */
-/* h1, h2 {
-      font-family: "Michroma", sans-serif;
-        text-shadow: 16px 0px 1px black;
-
-} */
-
-
-/* Dolphin ice cube */
-/* 
-#mid-left {
-    margin-top: 8rem;
-    margin-left: 4%;
-    width: 450px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    background-image: url(img/dolphin.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-#left-main-background {
-    width: 350px;
-    height: 200px;
-    background: linear-gradient(to top left, #ffffff 20%, #d0e9ffcc 60%, #a3d4ff80 100%);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    box-shadow: -4px -4px 20px #a3d4ff80;
-} */
-
-
 .bmi-table.formula td {
     background-color: var(--primary-white);
     border: none;
@@ -679,7 +656,6 @@ em {
     font-size: .5vw;
     padding: 6px;
 }
-
 .disabled-btn {
     background-color: var(--cold-blue);
     pointer-events: none;

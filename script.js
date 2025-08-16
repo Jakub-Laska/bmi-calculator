@@ -181,28 +181,39 @@ function calculateBtnState() {
 weightInput.addEventListener('input', calculateBtnState);
 heightInput.addEventListener('input', calculateBtnState);
 
-calculateBtn.addEventListener('click', ()=>{
-    let weightValue = weightInput.value;
+calculateBtn.addEventListener('click', () => {
+  let weightValue = weightInput.value;
+  let heightValue = heightInput.value;
 
-    let heightValue = heightInput.value;
+  let bmiResult = (weightValue / (heightValue ** 2) * 10000).toFixed(2);
 
-    let bmiResult = (weightValue / (heightValue ** 2) * 10000);
+  const resultWindowResult = document.querySelector('#result-window-result');
 
+  // show "fake loading" with random numbers
+  let counter = 0;
+  const loadingInterval = setInterval(() => {
+    const fakeResult = (Math.random() * 40 + 10).toFixed(2); // random number 10–50
+    resultWindowResult.innerHTML = `Calculating... ${fakeResult}`;
+    counter++;
+  }, 100); // change number every 100ms
 
-    console.log(bmiResult);
-
-    const resultWindowResult = document.querySelector('#result-window-result');
+  // stop loading after 2 seconds and show actual result
+  setTimeout(() => {
+    clearInterval(loadingInterval);
     resultWindowResult.innerHTML = `Your result: ${bmiResult}`;
+  }, 2000);
 
-    resultWindowToggle()
-    clearBtnFunction();
-})
+  resultWindowToggle();
+  clearBtnFunction();
+});
+
 // result window toggle
 function resultWindowToggle() {
     const bmiForm = document.querySelector('.form');
     bmiForm.classList.toggle('hidden');
     const bmiResultWindow = document.querySelector('.bmi-result-window');
     bmiResultWindow.classList.toggle('hidden');
+calculateBtn.disabled = true;
 }
 // result window
 
