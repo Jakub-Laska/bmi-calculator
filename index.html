@@ -22,10 +22,12 @@
     <div class="info-modal toggle">
         <div id="info-modal-popup">
             <span>About this app</span>
-            <img src="img/close.svg" alt="close icon">
-            <button>Features</button>
-            <button>Attributions</button>
-            <div id="key-features">
+            <button id="info-close-btn"></button>
+            <div>
+                <button class="info-btns disabled-btn">Features</button>
+                <button class="info-btns">Attributions</button>
+            </div>
+            <div id="key-features" class="info-div">
                 <span>Key features:</span>
                 <ul>
                     <li>Lorem, ipsum.</li>
@@ -37,7 +39,7 @@
                     This app provides a seamless experience across various devices and platforms. Enjoy its speed and reliability
                 </p>
             </div>
-            <div id="attributions">
+            <div id="attributions" class="info-div hidden">
                 <span>Attributions:</span>
                 <ul>
                     <li>Lorem, ipsum.</li>

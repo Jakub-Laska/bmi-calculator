@@ -9,9 +9,8 @@ burgerBtn.addEventListener('click', ()=>{
 })
 
 
-// info btn
+// info modal
 const infoBtn = document.querySelectorAll('.info-btn');
-let infoToggle = false;
 
 infoBtn.forEach(element => {
     element.addEventListener('click', ()=> {
@@ -22,6 +21,27 @@ infoBtn.forEach(element => {
 });
 })
 
+const infoCloseBtn = document.getElementById('info-close-btn');
+
+infoCloseBtn.addEventListener('click', ()=>{
+        const infoModal = document.querySelector('.info-modal')
+        infoModal.classList.toggle('toggle')
+        document.body.classList.toggle('overflow-hidden');
+})
+
+const infoDivs = document.querySelectorAll('.info-div');
+const infoBtns = document.querySelectorAll('.info-btns');
+
+infoBtns.forEach(element => {
+  element.addEventListener('click', ()=>{
+    infoBtns.forEach(element => {
+      element.classList.toggle('disabled-btn');
+    });
+    infoDivs.forEach(element => {
+      element.classList.toggle('hidden');
+    });
+  })
+});
 
 //  FIXED HEADER TOGGLE
 

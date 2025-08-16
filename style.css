@@ -130,16 +130,12 @@ table {
     top: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     z-index: 2;
-    overflow: hidden;
 }
 #info-modal-popup {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 80vw;
+    height: 80vh;
     padding: 12px;
     top: 50%;
     left: 50%;
@@ -148,6 +144,9 @@ table {
     z-index: 3;
     background-color: var(--primary-white);
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 .info-modal.toggle {
     opacity: 0;
@@ -155,6 +154,13 @@ table {
 }
 body.overflow-hidden {
     overflow: hidden;
+}
+#info-close-btn {
+    padding: 12px;
+    background: url(img/close.svg);
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 .bold {
     font-weight: 900;
