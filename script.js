@@ -18,6 +18,7 @@ infoBtn.forEach(element => {
         const infoModal = document.querySelector('.info-modal')
 
         infoModal.classList.toggle('toggle')
+        document.body.classList.toggle('overflow-hidden');
 });
 })
 
